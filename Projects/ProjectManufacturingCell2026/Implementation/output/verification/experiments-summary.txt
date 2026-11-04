@@ -1,0 +1,10 @@
+Verification run results
+Data: 2026-11-03
+
+E1: p check -tc tcCellTwoPhase -s 10000; seed 3916944287; 0 bugs em 10000 schedules; 220 timelines.
+E2: p check -tc tcCellNaive -s 1; seed 1493366575; contraexemplo no schedule 1.
+E3: variante sem eRelease; seed 2773888288; falha no schedule 1.
+E5: deadlines due=2; seed 3306960410; 0 bugs em 1000 schedules.
+E6: tres agentes; seed 3675433296; 0 bugs em 1000 schedules.
+
+Os relatorios interpretativos permanecem em external evidence/verification-results.md.

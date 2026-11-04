@@ -1,0 +1,6 @@
+Experiment E6 — three agents
+Variant: three agents sharing the cell resource
+Seed: 3675433296
+Schedules: 1000
+Timelines: 200
+Result: 0 bugs; monitors passed for explored schedules.

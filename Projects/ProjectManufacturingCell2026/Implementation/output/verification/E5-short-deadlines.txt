@@ -1,0 +1,6 @@
+Experiment E5 — short deadlines
+Variant: due = 2 for both obligations
+Seed: 3306960410
+Schedules: 1000
+Timelines: 128
+Result: 0 bugs; safety and liveness monitors passed for explored schedules.

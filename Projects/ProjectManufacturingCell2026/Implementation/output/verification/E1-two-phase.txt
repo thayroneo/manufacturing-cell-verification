@@ -1,0 +1,6 @@
+Experiment E1 — two-phase baseline
+Command: p check -tc tcCellTwoPhase -s 10000
+Seed: 3916944287
+Schedules: 10000
+Timelines: 220
+Result: 0 bugs; baseline accepted for explored schedules.

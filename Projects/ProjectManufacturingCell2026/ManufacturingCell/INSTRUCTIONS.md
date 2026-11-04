@@ -2,7 +2,7 @@
 
 A robot arm and an AGV share one work envelope (resource `0`, capacity 1). A single cell controller regiments access to it, and one organizational engine manages job obligations. A maintenance technician triggers a **lock-out adaptation** before entering the cell.
 
-> **Verification status.** Nothing in this guide has been confirmed by running P or PObserve yet. The P files have not been compiled, and the Java parser has not been built (it depends on classes that `p compile --mode pobserve` generates). Every "expected" result below is a hypothesis. The only results actually produced so far come from the Python mirror of the monitors (`tools/simulate_logs.py --check`), recorded in section 5. Fill in the validation record there as you confirm each step.
+> **Verification status.** The team ran the baseline preflight and acceptance runs on 2026-11-03 with P 3.1.0.0, .NET SDK 8.0.427, Temurin 17.0.21 and Gradle 8.10.2. p compile, E1, E2 and the additional variants completed; PObserve build and JUnit also succeeded. Results are recorded below and in Projeto/evidence/verification-results.md.
 >
 > *Note.* Independent evaluation, 21 October 2026 (P 3.1.0.0, .NET SDK 8.0.426): `p compile` succeeds with no warnings; `tcCellNaive` fails S1 on schedule 2 as intended; `tcCellTwoPhase`: no bug in 5,370 schedules within a 30-second run (not the 100,000-schedule acceptance run); `p compile --mode pobserve` generates the Java classes; Java build, JUnit and PObserve replay not yet run. Evidence: [`reviews/evaluation-2026-10-21`](https://github.com/perkusic/P-Language/tree/main/reviews/evaluation-2026-10-21).
 
@@ -347,7 +347,21 @@ wrote 200 lines to src/test/resources/cell_naive.log
 
 The simulator is deterministic for a given seed, so these commands reproduce the committed sample logs byte for byte.
 
-**Still to do:**
+**Team validation — 2026-11-03:**
+
+| Step | Command | Tool versions | Seed / schedules | Actual result |
+|---|---|---|---|---|
+| Toolchain preflight | `p --version`; `dotnet --version`; `java -version`; `gradle.bat --version`; `python --version` | P 3.1.0.0; .NET SDK 8.0.427; Temurin 17.0.21; Gradle 8.10.2; Python 3.12.10 | — | all commands succeeded on Windows 11 10.0.26200 |
+| Compile the model | `p compile` | P 3.1.0.0; .NET SDK 8.0.427 | — | succeeds, 0 warnings, 0 errors |
+| Generate the Java classes | `p compile --mode pobserve` | P 3.1.0.0; .NET SDK 8.0.427 | — | Java classes and `pom.xml` generated |
+| PObserve package build and JUnit | `gradle.bat wrapper`; `./gradlew.bat build` | Gradle 8.10.2; Temurin 17.0.21 | sample logs | build succeeds; two JUnit tests pass |
+| E1 two-phase baseline | p check tcCellTwoPhase -s 10000 | P 3.1.0.0; .NET SDK 8.0.427 | seed 3916944287; 10,000 schedules | 0 bugs; 220 timelines |
+| E2 naive policy | p check tcCellNaive -s 1 | P 3.1.0.0; .NET SDK 8.0.427 | seed 1493366575; schedule 1 | counterexample found; trace preserved |
+| additional variants | isolated variants in Implementation/variants | P 3.1.0.0; .NET SDK 8.0.427 | 1,000 schedules each | E3 fails as predicted; E5/E6 pass |
+
+Evidence: the external verification records.
+
+**Independent evaluation reference:**
 
 | Step | Command | Tool versions | Seed / schedules | Actual result |
 |---|---|---|---|---|
