@@ -1,0 +1,20 @@
+<Project>
+  <ProjectName>ManufacturingCellTeam</ProjectName>
+  <InputFiles>
+    <PFile>../Common/AdaptationCoordinator.p</PFile>
+    <PFile>../Common/Clock.p</PFile>
+    <PFile>../Common/HumanRequester.p</PFile>
+    <PFile>../Common/MonitorEvents.p</PFile>
+    <PFile>../Common/ObligationManager.p</PFile>
+    <PFile>../Common/ResourceGuard.p</PFile>
+    <PFile>../Common/RuntimeSpecs.p</PFile>
+    <PFile>../Common/Specs.p</PFile>
+    <PFile>../Common/Types.p</PFile>
+    <PFile>./PSrc/</PFile>
+    <PFile>./TeamSpecs.p</PFile>
+    <PFile>./TeamMutants.p</PFile>
+    <PFile>./PSpec/</PFile>
+    <PFile>./PTst/</PFile>
+  </InputFiles>
+  <OutputDir>../Implementation/PGenerated/</OutputDir>
+</Project>

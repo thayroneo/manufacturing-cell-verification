@@ -1,0 +1,44 @@
+<TestLog> Running test 'tcMutantL1'.
+<CreateLog> PImplementation.MutantL1 was created.
+<MonitorLog> PImplementation.MutantL1 enters state 'Watching'.
+<CreateLog> TestCellTwoTechniciansFixed(1) was created by task '109'.
+<StateLog> TestCellTwoTechniciansFixed(1) enters state 'Init'.
+<CreateLog> ManufacturingSystem(2) was created by TestCellTwoTechniciansFixed(1).
+<StateLog> ManufacturingSystem(2) enters state 'Init'.
+<AnnounceLog> 'ManufacturingSystem(2)' announced event 'eMonitorConfig' with payload (<0->1>).
+<CreateLog> ResourceGuard(3) was created by ManufacturingSystem(2).
+<CreateLog> AdaptationCoordinatorFixed(4) was created by ManufacturingSystem(2).
+<StateLog> ResourceGuard(3) enters state 'Init'.
+<GotoLog> ResourceGuard(3) is transitioning from state 'Init' to state 'PImplementation.ResourceGuard.Open'.
+<StateLog> ResourceGuard(3) exits state 'Init'.
+<StateLog> ResourceGuard(3) enters state 'Open'.
+<CreateLog> ObligationManager(5) was created by ManufacturingSystem(2).
+<StateLog> ObligationManager(5) enters state 'Active'.
+<StateLog> AdaptationCoordinatorFixed(4) enters state 'Init'.
+<GotoLog> AdaptationCoordinatorFixed(4) is transitioning from state 'Init' to state 'PImplementation.AdaptationCoordinatorFixed.Stable'.
+<StateLog> AdaptationCoordinatorFixed(4) exits state 'Init'.
+<StateLog> AdaptationCoordinatorFixed(4) enters state 'Stable'.
+<CreateLog> CellAgent(6) was created by ManufacturingSystem(2).
+<CreateLog> CellAgent(7) was created by ManufacturingSystem(2).
+<StateLog> CellAgent(6) enters state 'Init'.
+<GotoLog> CellAgent(6) is transitioning from state 'Init' to state 'PImplementation.CellAgent.Idle'.
+<StateLog> CellAgent(6) exits state 'Init'.
+<StateLog> CellAgent(6) enters state 'Idle'.
+<SendLog> 'ManufacturingSystem(2)' in state 'Init' sent event 'eAssignTask with payload (<agent:1, agentRef:CellAgent(6), task:100, due:4, >)' to 'ObligationManager(5)'.
+<SendLog> 'ManufacturingSystem(2)' in state 'Init' sent event 'eAssignTask with payload (<agent:2, agentRef:CellAgent(7), task:200, due:6, >)' to 'ObligationManager(5)'.
+<StateLog> CellAgent(7) enters state 'Init'.
+<GotoLog> CellAgent(7) is transitioning from state 'Init' to state 'PImplementation.CellAgent.Idle'.
+<StateLog> CellAgent(7) exits state 'Init'.
+<StateLog> CellAgent(7) enters state 'Idle'.
+<DequeueLog> 'ObligationManager(5)' dequeued event 'eAssignTask with payload (<agent:1, agentRef:CellAgent(6), task:100, due:4, >)' in state 'Active'.
+<AnnounceLog> 'ObligationManager(5)' announced event 'eObligationCreated' with payload <id:0, agent:1, task:100, due:4, >.
+<MonitorLog> MutantL1 is processing event 'eObligationCreated with payload (<id:0, agent:1, task:100, due:4, >)' in state 'Watching'.
+<ErrorLog> Assertion Failed: manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\TeamMutants.p:14:53 mutant L1 detected
+<StrategyLog> Found bug using 'random' strategy.
+<StrategyLog> Checking statistics:
+<StrategyLog> Found 1 bug.
+<StrategyLog> Scheduling statistics:
+<StrategyLog> Explored 1 schedule
+<StrategyLog> Explored 1 timeline
+<StrategyLog> Found 100.00% buggy schedules.
+<StrategyLog> Number of scheduling points in terminating schedules: 17 (min), 17 (avg), 17 (max).
