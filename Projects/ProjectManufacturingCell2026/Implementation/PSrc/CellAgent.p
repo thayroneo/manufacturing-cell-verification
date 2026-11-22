@@ -1,5 +1,8 @@
 // Team copy for ET2. The baseline machine is preserved; ET2 changes the
 // ManufacturingSystem wiring to instantiate two human requesters.
+// Resource 0 is the shared transfer zone. A reservation covers traversal and
+// work; eRelease is sent only after the agent has cleared that zone. The model
+// abstracts motion, sensors and physical energy isolation.
 fun CELL(): int { return 0; }
 type tHumanSync = (resource: int, requester: machine);
 event eHumanEnteredSync: tHumanSync;

@@ -1,7 +1,11 @@
-// Scenario A: manufacturing cell.
-// A robot arm and an AGV share one work envelope (resource CELL, capacity 1).
+// Scenario A: shared transfer zone (resource 0), capacity 1.
+// The fixed robot base and its retracted moving parts are outside resource 0.
+// AGV and arm alternate use; physical paths/material transfer are not simulated.
+// eRelease abstracts confirmed physical clearance before the release is sent.
+// Logical closure is not a physical energy-isolation or robot-maintenance model.
+// A robot arm and an AGV reserve the shared transfer zone in turn.
 // Each agent receives a job obligation, asks the cell controller for the
-// envelope, works, then releases it. As an open-MAS agent it may also fail
+// transfer zone, works, then releases it. As an open-MAS agent it may also fail
 // to report the job (nondeterministic $). The organization then sanctions it.
 fun CELL(): int { return 0; }
 
@@ -45,7 +49,9 @@ machine CellAgent {
     ignore eSanction;
   }
 
-  // Occupancy window: between the guard's admission and its processing of eRelease.
+  // Reservation window: grant at the guard through its processing of eRelease.
+  // A realization must clear resource 0 before sending release; no motion/sensor
+  // confirmation is implemented here. An arm stopped inside has not cleared it.
   state Working {
     entry { send this, eContinue; }
     on eContinue do {
