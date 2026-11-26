@@ -1,0 +1,30 @@
+﻿.. Searching for a P project file *.pproj locally in the current folder
+.. Found P project file: C:\Users\Micael\Documents\VScode\Mestrado\SFC\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\ManufacturingCellTeam.pproj
+.. Searching for a P compiled file locally in folder ../Implementation/PGenerated/
+.. Found a P compiled file: ../Implementation/PGenerated/PChecker\net8.0\ManufacturingCellTeam.dll
+.. Checking ../Implementation/PGenerated/PChecker\net8.0\ManufacturingCellTeam.dll
+.. Running test cases with prefix 'tcMutantR3':
+tcMutantR3
+.. Test case :: tcMutantR3
+... Checker is using 'random' strategy (seed:1742197821).
+..... Schedule #1
+Checker found a bug.
+... Emitting traces:
+..... Writing PCheckerOutput\BugFinding\ManufacturingCellTeam_0_0.txt
+..... Writing PCheckerOutput\BugFinding\ManufacturingCellTeam_0_0.trace.json
+..... Writing PCheckerOutput\BugFinding\ManufacturingCellTeam_0_0.schedule
+... Elapsed 0.09 sec and used 0 GB.
+... Emitting coverage report:
+..... Writing PCheckerOutput\BugFinding\ManufacturingCellTeam.coverage.txt
+..... Writing PCheckerOutput\BugFinding\ManufacturingCellTeam.sci
+... Checking statistics:
+..... Found 1 bug.
+... Scheduling statistics:
+..... Explored 1 schedule
+..... Explored 1 timeline
+..... Found 100.00% buggy schedules.
+..... Number of scheduling points in terminating schedules: 78 (min), 78 (avg), 78 (max).
+..... Writing PCheckerOutput\BugFinding\ManufacturingCellTeam_pchecker_summary.txt
+... Elapsed 0.1320962 sec.
+. Done
+~~ [PTool]: Thanks for using P! ~~

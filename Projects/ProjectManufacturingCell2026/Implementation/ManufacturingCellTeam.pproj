@@ -11,8 +11,6 @@
     <PFile>../Common/Specs.p</PFile>
     <PFile>../Common/Types.p</PFile>
     <PFile>./PSrc/</PFile>
-    <PFile>./TeamSpecs.p</PFile>
-    <PFile>./TeamMutants.p</PFile>
     <PFile>./PSpec/</PFile>
     <PFile>./PTst/</PFile>
   </InputFiles>
