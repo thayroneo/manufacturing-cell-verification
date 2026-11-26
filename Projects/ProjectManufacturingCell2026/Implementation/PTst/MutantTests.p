@@ -12,3 +12,6 @@ test tcMutantL3 [main=TestCellTwoTechniciansFixed]: assert MutantL3 in
   { TestCellTwoTechniciansFixed, ManufacturingSystem, CellAgent, ResourceGuard, AdaptationCoordinator, AdaptationCoordinatorFixed, ObligationManager, Clock, HumanRequester, HumanRequesterFixed };
 test tcMutantR3 [main=TestCellTwoTechniciansFixed]: assert MutantR3 in
   { TestCellTwoTechniciansFixed, ManufacturingSystem, CellAgent, ResourceGuard, AdaptationCoordinator, AdaptationCoordinatorFixed, ObligationManager, Clock, HumanRequester, HumanRequesterFixed };
+
+test tcMutantS4 [main=TestCellTwoTechniciansPreFix]: assert NoOpeningWhileHumanInside in
+  { TestCellTwoTechniciansPreFix, ManufacturingSystem, CellAgent, ResourceGuard, AdaptationCoordinator, AdaptationCoordinatorFixed, ObligationManager, Clock, HumanRequester, HumanRequesterFixed };

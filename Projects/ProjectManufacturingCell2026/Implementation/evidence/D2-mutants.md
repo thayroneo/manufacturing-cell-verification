@@ -27,3 +27,5 @@ Os mutants R1 e R2 sao de logs/runtime e dependem do PObserve; permanecem planej
 ## Interpretacao
 
 Todos os mutants de design time incluidos em D2 foram detectados pelo monitor correspondente. O resultado demonstra a capacidade de revelar as violacoes modeladas nesta campanha, dentro dos seeds e limites registrados. Ele nao constitui uma prova para execucoes, logs ou hipoteses que nao foram exercitados.
+
+| S4 | modelo pre-correcao permite reabrir com humano dentro | 	cMutantS4 | 11558498 | 1 bug em 8 schedules |
