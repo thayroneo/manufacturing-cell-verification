@@ -1,0 +1,160 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>D3 — Relatório de verificação com PObserve</title><style>
+    @page { size:A4; margin:17mm; }
+    * {box-sizing:border-box} body {max-width:1060px;margin:36px auto;padding:0 28px;
+    font:15px/1.6 'Segoe UI',sans-serif;color:#183044;background:#fff}
+    .eyebrow {font-size:12px;letter-spacing:2px;color:#31756b;font-weight:700}
+    h1 {font-size:30px;line-height:1.2;margin:12px 0 22px;color:#123454}
+    h2 {font-size:20px;color:#123454;border-bottom:1px solid #cfdde4;padding-bottom:6px;
+    margin-top:30px;break-after:avoid} p,li {overflow-wrap:anywhere}
+    h3 {font-size:17px;color:#123454;margin-top:24px;break-after:avoid}
+    li {margin-bottom:7px} code {font-size:.95em}
+    .cards {display:flex;gap:15px;margin-bottom:25px}.card {flex:1;background:#edf5f6;
+    border-left:4px solid #287a70;padding:15px}.card strong {display:block;font-size:28px}
+    table {width:100%;border-collapse:collapse;font-size:10px;line-height:1.4}
+    th {background:#123454;color:#fff;text-align:left} td,th {padding:7px 5px;border:1px solid #d6e1e7}
+    tr {break-inside:avoid} tbody tr:nth-child(even) {background:#f3f7f9}
+    thead {display:table-header-group}.assumptions {table-layout:fixed}
+    .assumptions th:first-child {width:39%}.assumptions th:nth-child(2) {width:21%}
+    .assumptions th:nth-child(3) {width:22%}.assumptions th:nth-child(4) {width:18%}
+    .assumptions td {vertical-align:top;overflow-wrap:anywhere}
+    .note {font-size:13px;color:#526b7b}.break {break-before:page}
+    @media print {body {margin:0;padding:0;font-size:10.5pt}.cards {break-inside:avoid}h1 {font-size:24pt}
+    h2 {font-size:15pt} h3 {font-size:12pt}li {break-inside:avoid}
+    .card strong {font-size:23pt}table {font-size:8pt}}
+    </style></head><body><div class="eyebrow">MANUFACTURING CELL · ENTREGA D3 · 27/11/2026</div><div class="cards"><div class="card"><strong>41/41</strong>Vereditos PObserve</div><div class="card"><strong>19</strong>Testes JUnit aprovados</div><div class="card"><strong>8 ticks</strong>Limite empírico de R2</div></div><h1>D3 — Verificação de logs com PObserve</h1>
+<p>Estado: <strong>D3_LOCALLY_VERIFIED_SYNTHETIC</strong>.</p>
+<p>Maturidade: <strong>TECHNICALLY_VERIFIED</strong>, restrita ao ambiente e corpus registrados.</p>
+<h2>Resultados executados</h2>
+<ul>
+<li>16 cenários; 41/41 vereditos CLI coincidiram com a previsão.</li>
+<li>JUnit: 19 testes, 0 falhas, 0 erros.</li>
+<li>Python: 9 testes de consistência, reprodução dos exemplos e validação das evidências.</li>
+<li>Modelo base e implementação D2 compilados. Regressão D2: 1000 schedules, seed 42, zero bugs.</li>
+</ul>
+<p>Os 41 vereditos incluem aprovações e violações intencionais previstas; não são 41 execuções sem violações.</p>
+<h2>Calibração de R2</h2>
+<p>FACT: 500 seeds com um técnico e 500 com dois, 60 ticks por execução, 6680 adaptações concluídas.</p>
+<p>FACT: 11 durações excederam cinco ticks; máximo observado: 8 ticks.</p>
+<p>FACT: 28 adaptações ainda estavam abertas ao fim dos 60 ticks e não entram na distribuição de durações concluídas. Elas permanecem registradas em calibration.json.</p>
+<p>ANALYTICAL_DECISION: B=8 para este corpus, configurado pelo evento RUNTIME_CONFIG. Sem configuração, o monitor conserva o padrão B=5.</p>
+<p>A medição usa ADAPT_START até COMMIT/ADAPT_ABORT, incluindo o atraso do protocolo. Seed 64 excede cinco ticks; seed 299 atinge oito.</p>
+<h2>Dois técnicos e S4</h2>
+<p>O corpus contém presença simultânea dos dois técnicos. A versão pré-correção reabre com uma pessoa dentro e S4 reporta a violação.</p>
+<p>A versão corrigida mantém os holders desde o pedido até a saída, cobrindo autorizações pendentes. Os sete monitores aceitam o log corrigido.</p>
+<h2>Falha do sistema e defeito do log</h2>
+<p>SYSTEM_FAULT: a organização deixa de aplicar sanções; o logger registra fielmente os fatos. R1 detecta obrigação vencida.</p>
+<p>SYSTEM_FAULT: o controlador adia o commit efetivo, mantendo o bloqueio. R2 detecta atraso.</p>
+<p>LOG_DEFECT: removemos LEAVE ou SANCTION, ou duplicamos COMMIT/outcome depois da simulação correta. O comportamento real continua sendo o do log original.</p>
+<p>R1 pode produzir o mesmo alarme para sanção realmente suprimida e registro de sanção apagado. Esse alarme sozinho não identifica a causa; a proveniência das mutações está em cases.json.</p>
+<h2>Evidências e reprodução</h2>
+<p>Comandos e versões: commands.json e versions.json. Corpus/hashes: cases.json e logs/. Calibração: calibration.json.</p>
+<p>Saídas reais do CLI, métricas e replay: pobserve/. Resultados tabulares: results.md, results.csv e results.json. JUnit: junit/.</p>
+<p>Consulte D3_GUIA.md para repetir a campanha.</p>
+<h2>Limitações</h2>
+<ul>
+<li>Os logs são sintéticos; nenhuma célula física ou implantação real foi avaliada.</li>
+<li>O máximo da calibração é empírico e não limita todas as execuções futuras.</li>
+<li>Logs finitos não demonstram vivacidade ilimitada; adaptações abertas ao final são registradas.</li>
+<li>A instalação no controlador do simulador de dois técnicos é síncrona; não há prova de refinamento em relação ao modelo P.</li>
+</ul>
+<h2>Premissas e ameaças à validade</h2>
+<p>Este anexo completa a análise das dez premissas de SPECIFICATION.md, seção 7.7. A tabela distingue o escopo do modelo do que foi efetivamente observado no D3. As três subseções seguintes discutem cada premissa quanto à validade interna, de construto e externa.</p>
+<p>FACT / TECHNICALLY_VERIFIED: as evidências sustentam os resultados do corpus sintético registrado em summary.json e results.json. INFERENCE / TECHNICAL_REVIEWED_SYNTHETIC: a interpretação abaixo delimita o alcance desses resultados. Uma premissa não passa a estar validada no mundo real porque um teste sintético foi aprovado.</p>
+<table class="assumptions"><thead><tr><th>Premissa e situação no D3</th><th>Contraparte em uma célula real</th><th>Aproximação</th><th>Propriedades afetadas</th></tr></thead><tbody>
+<tr><td>P01 — Agentes usam pedido, autorização, saída e relatório. Os logs base seguem esse protocolo; não há ensaio de movimento robótico sem autorização.</td><td>Um robô pode se mover sem permissão após uma falha de software ou hardware.</td><td>Subaproximação.</td><td>S1, S2; um resultado seguro não cobre movimento fora do protocolo.</td></tr>
+<tr><td>P02 — O modelo pressupõe mensagens sem perda ou duplicação, ordenadas por par remetente/destinatário. No simulador com dois técnicos, a instalação no guard é síncrona.</td><td>A rede pode perder, atrasar, duplicar e reordenar mensagens entre fontes.</td><td>Subaproximação; a equivalência entre simulador e modelo assíncrono não foi demonstrada.</td><td>S2, L2, R2; também S4 quando depende da instalação da regulação.</td></tr>
+<tr><td>P03 — A saída é um evento instantâneo; a geometria e a trajetória do movimento não são representadas.</td><td>Um braço precisa de espaço e tempo para sair da zona.</td><td>Abstração da movimentação para ocupação.</td><td>S1; o instante físico da saída não foi validado.</td></tr>
+<tr><td>P04 — Escopo da especificação: um guard, um recurso de capacidade 1 e dois agentes. O D3 acrescenta logs com um ou dois técnicos.</td><td>Há células com várias zonas, capacidades e agentes.</td><td>Restrição de escopo.</td><td>Todas; os resultados se referem às configurações registradas.</td></tr>
+<tr><td>P05 — Prazos e durações são contados em ticks lógicos. R2 usa o intervalo completo entre início e commit ou abort da mesma versão.</td><td>O tempo de relógio tem jitter e atrasos de execução.</td><td>Abstração temporal; B é uma escolha empírica do corpus.</td><td>L1, R1, R2.</td></tr>
+<tr><td>P06 — O técnico aguarda o commit nos cenários regulares. Um caso negativo registra entrada sem bloqueio e exercita R3.</td><td>Uma pessoa pode contornar o procedimento.</td><td>Subaproximação nos cenários regulares; um desvio específico é exercitado.</td><td>R3; S1 também depende da entrada efetivamente registrada.</td></tr>
+<tr><td>P07 — A presença humana é registrada sem erro nos logs base; não há modelo de falha do sensor.</td><td>Cortinas de luz e sensores podem falhar ou ser desativados.</td><td>Subaproximação.</td><td>S1, R3, S4; os monitores dependem da presença observada.</td></tr>
+<tr><td>P08 — O modelo base é limitado por maxTicks, denials e tick final. A calibração D3 usa logs de 60 ticks e registra adaptações abertas no fim.</td><td>A operação é contínua e pode terminar um recorte com trabalho pendente.</td><td>Exploração e observação limitadas.</td><td>L1, L2, L3; R1 e R2 precisam de ticks posteriores para revelar atrasos.</td></tr>
+<tr><td>P09 — As escolhas não determinísticas do modelo P representam decisões dentro do protocolo. O simulador Python usa seeds e escolhas pseudoaleatórias.</td><td>Agentes de fornecedores ou com aprendizagem podem agir de maneiras não representadas.</td><td>Sobreaproximação pretendida apenas das decisões internas ao protocolo P; amostragem finita no simulador.</td><td>Propriedades de sanção e cobertura comportamental; não há equivalência provada entre as duas escolhas.</td></tr>
+<tr><td>P10 — Timestamps dos logs D3 são estritamente crescentes por site; Site identifica a partição. Não foi injetado desvio entre relógios de fontes distintas.</td><td>Relógios de PLC, organização e sensores podem apresentar skew.</td><td>A correspondência entre timestamp e causalidade depende da sincronização.</td><td>S1 e R3 em runtime; ordenação de commits também afeta a interpretação de S2 e S4.</td></tr>
+</tbody></table>
+<h3>Validade interna</h3>
+<ul>
+<li><strong>P01.</strong> Erros na geração de ENTER/LEAVE poderiam tornar a ocupação artificialmente segura. A reprodução dos exemplos originais, seus hashes e os casos negativos S1/S2 reduzem esse risco; não conferem movimentos físicos.</li>
+<li><strong>P02.</strong> A instalação síncrona do simulador pode omitir interleavings presentes no P assíncrono. A regressão D2 e o teste S4 pré-correção são evidências separadas; nenhuma prova que os dois modelos têm o mesmo conjunto de comportamentos. Duplicar COMMIT no arquivo exercita um defeito de log, não uma duplicação de mensagem da rede.</li>
+<li><strong>P03.</strong> A atualização incorreta da ocupação no simulador ou parser mudaria o veredito. O caso de LEAVE removido mostra o efeito dessa dependência; o log original preservado fornece a referência da simulação, sem confirmar o instante real de saída.</li>
+<li><strong>P04.</strong> CONFIG ou Res incorretos poderiam alterar capacidades e misturar recursos. Os testes reproduzem o recurso configurado e verificam presença simultânea de dois técnicos; não foram executados testes de partições com múltiplos sites nem de várias zonas.</li>
+<li><strong>P05.</strong> Erros na contagem de TICK ou na associação de versões afetariam as durações. A medição usa ADAPT_START até COMMIT/ADAPT_ABORT, incluindo o protocolo; os casos seeds 64/299 e abort de versão incorreta exercitam essas fronteiras. O máximo só considera adaptações concluídas.</li>
+<li><strong>P06.</strong> R3 poderia passar sem receber HUMAN_ENTER. A contagem de eventos, o cenário regular e o caso human_bypasses_lockout exercitam o monitor, que rejeita a entrada sem commit. Isso reduz o risco de aprovação vazia para esse caso.</li>
+<li><strong>P07.</strong> O parser pode interpretar corretamente um dado incorreto emitido pelo sensor. Os testes de parser e as métricas sem erros conferem a transformação dos registros; não verificam a origem física dos sinais.</li>
+<li><strong>P08.</strong> Um prefixo vazio ou uma execução parcial poderia aparentar sucesso. O verificador exige eventos e métricas válidas, e o runner confirma a quantidade explorada de schedules. As adaptações abertas ao fim da calibração são registradas separadamente, sem serem tratadas como concluídas.</li>
+<li><strong>P09.</strong> Um gerador e um verificador com o mesmo erro poderiam concordar. Os vereditos usados no relatório vêm dos monitores P compilados para Java e do CLI real; a prévia Python não é usada como comprovação. Hashes e seeds permitem repetir os dados, mas não garantem independência de toda a implementação.</li>
+<li><strong>P10.</strong> Reordenação e timestamps empatados poderiam alterar os estados observados. Os testes verificam crescimento estrito dos timestamps do corpus e o classificador rejeita erros de ordenação do CLI. Isso não mede sincronização entre relógios reais.</li>
+</ul>
+<h3>Validade de construto</h3>
+<ul>
+<li><strong>P01.</strong> S1 e S2 expressam ocupação e admissão sob a regulação registrada. A norma física de segurança é mais ampla que a conformidade desse protocolo; não se conclui que qualquer movimento do robô esteja seguro.</li>
+<li><strong>P02.</strong> A ordem dos registros não representa automaticamente a ordem de entrega de todas as mensagens. O atraso real do commit e a duplicação de sua linha têm causas distintas, mesmo quando um monitor acusa violação; essa distinção é mantida em cases.json.</li>
+<li><strong>P03.</strong> LEAVE significa que o agente deixou a zona no modelo. Não significa apenas que começou a sair. Se uma implementação física registrar a intenção de sair em vez da saída concluída, o evento deixará de corresponder ao construto de ocupação usado por S1.</li>
+<li><strong>P04.</strong> Capacidade 1 limita a ocupação dos agentes modelados; não é uma afirmação sobre toda configuração industrial nem uma proibição de coexistência dos dois técnicos. S4 exige que a zona permaneça fechada enquanto houver presença humana registrada.</li>
+<li><strong>P05.</strong> R1 é resposta ao prazo da obrigação, com a tolerância definida pelo monitor. R2 é duração da adaptação inteira, não apenas do drain. B=8 é calibrado empiricamente; o suporte a abort correlacionado encerra a adaptação monitorada, sem afirmar que um commit ocorreu nem alterar a interpretação de L2.</li>
+<li><strong>P06.</strong> R3 verifica a sequência normativa de bloqueio antes da entrada, enquanto S1 verifica coexistência perigosa. Detectar um bypass em R3 não demonstra a existência de uma barreira física capaz de impedir a pessoa de entrar.</li>
+<li><strong>P07.</strong> HUMAN_ENTER/HUMAN_LEAVE representam a presença detectada. Ausência de registro não significa ausência de pessoa. Um defeito de log ou sensor pode produzir falso alarme ou ocultar uma violação; PObserve sozinho não identifica a causa.</li>
+<li><strong>P08.</strong> PASS em um log finito significa ausência de violação detectada naquele prefixo. Não demonstra vivacidade ilimitada nem a resolução de tudo que ficou pendente. Os testes negativos e a rejeição de entrada vazia reduzem vacuidade, sem eliminarem o limite temporal da observação.</li>
+<li><strong>P09.</strong> Uma sanção é uma ação da organização, distinta de sua linha no log. A supressão da ação e a exclusão posterior da linha foram separadas para não interpretar todo alarme R1 como falha efetiva do sistema.</li>
+<li><strong>P10.</strong> Um timestamp crescente é ordem documental, não prova de causalidade entre fontes. Ver ajuda a identificar versões, mas S2 continua sendo uma propriedade de fechamento do recurso; não foi redefinida como igualdade estrita entre versão de admissão e versão atual.</li>
+</ul>
+<h3>Validade externa</h3>
+<ul>
+<li><strong>P01.</strong> Nenhum ensaio cobriu movimento robótico sem grant ou falha de atuador. A extrapolação para esses comportamentos permanece OPEN_QUESTION; os resultados abrangem as ações representadas no corpus.</li>
+<li><strong>P02.</strong> Não foram avaliadas perdas, duplicações e reordenações de mensagens em rede industrial. Um resultado do simulador síncrono não é transferido para uma implementação distribuída sem analisar seus canais e interleavings.</li>
+<li><strong>P03.</strong> Distância de parada, velocidade e tempo de retirada não foram medidos. Os resultados sobre ocupação abstrata não constituem validação de segurança da movimentação física.</li>
+<li><strong>P04.</strong> Não se generaliza a aprovação para mais agentes, zonas, guards ou capacidades. Outra configuração requer seus próprios cenários, instrumentação e resultados de verificação.</li>
+<li><strong>P05.</strong> Oito ticks não são oito segundos físicos garantidos. O período dos ticks, jitter e tempos de reação precisam ser definidos e medidos na implantação; o máximo amostral não limita execuções futuras.</li>
+<li><strong>P06.</strong> O bypass sintético cobre uma sequência específica, não todos os comportamentos humanos possíveis. Adesão ao procedimento e eficácia de intertravamentos físicos permanecem fora da validação D3.</li>
+<li><strong>P07.</strong> Não houve avaliação de cobertura, diagnóstico ou confiabilidade de sensores. Um veredito limpo não permite concluir que uma pessoa não detectada estaria protegida.</li>
+<li><strong>P08.</strong> Seeds, schedules e logs têm horizontes finitos. As adaptações ainda abertas podem terminar ou violar o limite depois do recorte; nenhuma dessas alternativas é inferida. Operação prolongada e reinícios exigem observação própria e segmentação adequada dos logs.</li>
+<li><strong>P09.</strong> Os seeds não representam uma distribuição conhecida do comportamento de agentes reais. Não se estimam frequências de falha, probabilidades de segurança ou comportamento de agentes com aprendizagem a partir dessa amostra.</li>
+<li><strong>P10.</strong> Não foi medida a acurácia de relógios NTP/PTP nem executado teste com fontes físicas independentes. Skew pode criar ou ocultar alarmes; a adequação temporal da instrumentação real permanece OPEN_QUESTION.</li>
+</ul>
+<h3>Decisões e questões abertas</h3>
+<p>ANALYTICAL_DECISION / TECHNICAL_REVIEWED_SYNTHETIC: manter separados resultados do checker, medições do simulador e vereditos PObserve. Os sete monitores de runtime cobrem S1–S4 e R1–R3; L1–L3 pertencem ao checker e não são declarados provados pelos logs. A campanha de calibração mede durações e não equivale à verificação integral de suas mil execuções por PObserve.</p>
+<p>HYPOTHESIS / NOT_VALIDATED: uma instrumentação que preserve os significados dos eventos, a completude e a ordem causal poderá permitir a aplicação dos mesmos monitores a uma célula real. Essa hipótese não foi testada no D3. A instrumentação JaCaMo é uma extensão opcional da especificação, não uma execução realizada nesta entrega.</p>
+<p>OPEN_QUESTION / NOT_VALIDATED: equivalência entre simulador e modelo assíncrono, seleção de B para operação real, falhas de sensores e rede, relógios de múltiplas fontes e generalização para outras escalas. Nenhuma dessas questões é convertida em conclusão de segurança física.</p>
+<h2 class="break">Matriz dos vereditos executados</h2><table><thead><tr><th>Cenário</th><th>Monitor</th><th>Previsto</th><th>Observado</th></tr></thead><tbody>
+<tr><td>original_twophase</td><td>RegimentationSafety</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_twophase</td><td>NoStaleAdmission</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_twophase</td><td>NoDoubleOutcome</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_twophase</td><td>ObligationDeadlineRespected</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_twophase</td><td>AdaptationBoundedTime</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_twophase</td><td>LockoutBeforeEntry</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_twophase</td><td>NoOpeningWhileHumanInside</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>original_naive</td><td>RegimentationSafety</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>original_naive</td><td>NoStaleAdmission</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>two_technicians_fixed</td><td>RegimentationSafety</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_fixed</td><td>NoStaleAdmission</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_fixed</td><td>NoDoubleOutcome</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_fixed</td><td>ObligationDeadlineRespected</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_fixed</td><td>AdaptationBoundedTime</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_fixed</td><td>LockoutBeforeEntry</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_fixed</td><td>NoOpeningWhileHumanInside</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>two_technicians_prefix</td><td>NoOpeningWhileHumanInside</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>seed64_default_bound</td><td>AdaptationBoundedTime</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>seed64_calibrated</td><td>RegimentationSafety</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed64_calibrated</td><td>NoStaleAdmission</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed64_calibrated</td><td>NoDoubleOutcome</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed64_calibrated</td><td>ObligationDeadlineRespected</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed64_calibrated</td><td>AdaptationBoundedTime</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed64_calibrated</td><td>LockoutBeforeEntry</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed64_calibrated</td><td>NoOpeningWhileHumanInside</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>RegimentationSafety</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>NoStaleAdmission</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>NoDoubleOutcome</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>ObligationDeadlineRespected</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>AdaptationBoundedTime</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>LockoutBeforeEntry</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>seed299_calibrated</td><td>NoOpeningWhileHumanInside</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>system_sanction_suppressed</td><td>ObligationDeadlineRespected</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>system_commit_delayed</td><td>AdaptationBoundedTime</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>log_missing_leave</td><td>RegimentationSafety</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>log_deleted_sanction</td><td>ObligationDeadlineRespected</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>log_duplicate_commit</td><td>NoStaleAdmission</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>log_duplicate_outcome</td><td>NoDoubleOutcome</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>human_bypasses_lockout</td><td>LockoutBeforeEntry</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+<tr><td>abort_valid</td><td>AdaptationBoundedTime</td><td>PASS</td><td>PASS</td></tr>
+<tr><td>abort_wrong_version</td><td>AdaptationBoundedTime</td><td>VIOLATION</td><td>VIOLATION</td></tr>
+</tbody></table><p class="note">Corpus sintético. Evidências e comandos completos acompanham este relatório.</p></body></html>

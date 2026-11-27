@@ -1,0 +1,15 @@
+errorKey=cell-A
+errorTimeStamp=1792396807001
+errorMessage=Assertion failure: ..\..\..\..\Common\RuntimeSpecs.p:36:9 obligation 0 is overdue (due 5, now 7) but was neither fulfilled nor sanctioned
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:01.001000000Z, event=eTick[1], logLine='2026-10-19 08:00:01.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:01.002000000Z, event=eObligationCreated[PTuple_id_agent_task_due[id=0, agent=2, task=200, due=5]], logLine='2026-10-19 08:00:01.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=OBLIGATION, Id=0, Agent=2, Task=200, Due=5', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:01.003000000Z, event=eObligationCreated[PTuple_id_agent_task_due[id=1, agent=1, task=101, due=5]], logLine='2026-10-19 08:00:01.003000 [cell-A] INFO Regulation - : Site=cell-A, Event=OBLIGATION, Id=1, Agent=1, Task=101, Due=5', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.001000000Z, event=eTick[2], logLine='2026-10-19 08:00:02.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=2', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:03.001000000Z, event=eTick[3], logLine='2026-10-19 08:00:03.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=3', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:04.001000000Z, event=eTick[4], logLine='2026-10-19 08:00:04.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=4', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:04.004000000Z, event=eObligationFulfilled[PTuple_id_agent[id=1, agent=1]], logLine='2026-10-19 08:00:04.004000 [cell-A] INFO Regulation - : Site=cell-A, Event=FULFILLED, Id=1, Agent=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:05.001000000Z, event=eTick[5], logLine='2026-10-19 08:00:05.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=5', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:05.005000000Z, event=eObligationCreated[PTuple_id_agent_task_due[id=2, agent=1, task=102, due=9]], logLine='2026-10-19 08:00:05.005000 [cell-A] INFO Regulation - : Site=cell-A, Event=OBLIGATION, Id=2, Agent=1, Task=102, Due=9', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:06.001000000Z, event=eTick[6], logLine='2026-10-19 08:00:06.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=6', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:07.001000000Z, event=eTick[7], logLine='2026-10-19 08:00:07.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=7', customPayload=null}

@@ -1,0 +1,32 @@
+Current PObserve configuration:
+PObserveConfig {
+  outputDir            = C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\seed64_default_bound\AdaptationBoundedTime
+  inputKind            = TEXT
+  supplierJars         = [C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\build\libs\CellRegulation-1.0.0-uber.jar]
+  parserName           = null
+  specificationName    = AdaptationBoundedTime
+  replayWindowSize     = 100
+  logDelimiter         = \n
+}
+-------------------------------------
+PObserve Spec Violation::
+Assertion failure: ..\..\..\..\Common\RuntimeSpecs.p:70:7 adaptation to norm set v3 started at tick 20 and is still not committed at tick 26
+.. writing error log into file C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\seed64_default_bound\AdaptationBoundedTime\replayEvents_cell-A.log
+-------------------------------------
+
+Total time taken = 0.0023666667 min
+
+---------------------------------------------------------------------------------------------------------
+Total Events Read        Total Verified Events    Total Verified Keys      Total Partition Keys   
+---------------------------------------------------------------------------------------------------------
+76                       30                       0                        1                      
+
+
+------------------------------------------------------------------------------------------------------
+Total Parser Errors      Total Spec Errors        Total Out of Order Errors     Total Unknown Errors   
+------------------------------------------------------------------------------------------------------
+0                        1                        0                             0                      
+
+
+PObserve run completed with 1 error(s)
+Run details and replay event logs can be found in C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\seed64_default_bound\AdaptationBoundedTime

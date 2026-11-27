@@ -1,0 +1,8 @@
+# Preserve native outputs and hashed D3 evidence across platforms.
+Projects/ProjectManufacturingCell2026/Implementation/evidence/D3/** -text
+
+# D3 reproduces the original sample fixtures byte for byte.
+Projects/ProjectManufacturingCell2026/ManufacturingCell/pobserve/src/test/resources/*.log -text
+
+# The reviewed assumptions source also has a recorded SHA-256.
+Projects/ProjectManufacturingCell2026/ManufacturingCell/D3_PREMISSAS.md text eol=lf

@@ -1,0 +1,30 @@
+Current PObserve configuration:
+PObserveConfig {
+  outputDir            = C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\original_twophase\NoStaleAdmission
+  inputKind            = TEXT
+  supplierJars         = [C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\build\libs\CellRegulation-1.0.0-uber.jar]
+  parserName           = null
+  specificationName    = NoStaleAdmission
+  replayWindowSize     = 100
+  logDelimiter         = \n
+}
+-------------------------------------
+Success! No bugs found.
+-------------------------------------
+
+Total time taken = 0.0016333334 min
+
+---------------------------------------------------------------------------------------------------------
+Total Events Read        Total Verified Events    Total Verified Keys      Total Partition Keys   
+---------------------------------------------------------------------------------------------------------
+28                       28                       1                        1                      
+
+
+------------------------------------------------------------------------------------------------------
+Total Parser Errors      Total Spec Errors        Total Out of Order Errors     Total Unknown Errors   
+------------------------------------------------------------------------------------------------------
+0                        0                        0                             0                      
+
+
+PObserve run completed with 0 error(s)
+Run details can be found in C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\original_twophase\NoStaleAdmission

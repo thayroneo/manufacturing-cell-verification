@@ -1,0 +1,32 @@
+Current PObserve configuration:
+PObserveConfig {
+  outputDir            = C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\two_technicians_prefix\NoOpeningWhileHumanInside
+  inputKind            = TEXT
+  supplierJars         = [C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\build\libs\CellRegulation-1.0.0-uber.jar]
+  parserName           = null
+  specificationName    = NoOpeningWhileHumanInside
+  replayWindowSize     = 100
+  logDelimiter         = \n
+}
+-------------------------------------
+PObserve Spec Violation::
+Assertion failure: ..\..\..\..\Implementation\PSpec\TeamSpecs.p:19:9 resource 0 reopened while 1 human(s) remain inside
+.. writing error log into file C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\two_technicians_prefix\NoOpeningWhileHumanInside\replayEvents_cell-A.log
+-------------------------------------
+
+Total time taken = 0.00125 min
+
+---------------------------------------------------------------------------------------------------------
+Total Events Read        Total Verified Events    Total Verified Keys      Total Partition Keys   
+---------------------------------------------------------------------------------------------------------
+8                        5                        0                        1                      
+
+
+------------------------------------------------------------------------------------------------------
+Total Parser Errors      Total Spec Errors        Total Out of Order Errors     Total Unknown Errors   
+------------------------------------------------------------------------------------------------------
+0                        1                        0                             0                      
+
+
+PObserve run completed with 1 error(s)
+Run details and replay event logs can be found in C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\two_technicians_prefix\NoOpeningWhileHumanInside

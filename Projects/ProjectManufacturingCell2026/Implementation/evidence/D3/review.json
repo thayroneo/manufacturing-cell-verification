@@ -1,0 +1,49 @@
+{
+  "status": "REVIEW_COMPLETED_PUBLICATION_AUTHORIZED",
+  "maturity": "TECHNICAL_REVIEWED_SYNTHETIC",
+  "pdf_pages": 8,
+  "pdf_sha256": "6854238e5531c4b903659ad223f2f2b8eaf47f217be9b167f5834dd92aed0082",
+  "pobserve_checks": 41,
+  "expected_violations": 12,
+  "tool_errors": 0,
+  "junit_tests": 19,
+  "python_tests": 9,
+  "calibration_completed_adaptations": 6680,
+  "calibration_pending_adaptations_at_eof": 28,
+  "empirical_bound_ticks": 8,
+  "d2_regression_schedules": 1000,
+  "publication": "User authorized commit and push to d3-runtime. Verify publication through local and remote Git references; formal submission remains postponed.",
+  "pass_verdicts": 29,
+  "visual_review": "All eight final PDF pages rendered and visually inspected; no clipping, absent premise text or missing verdict rows.",
+  "reviewed_at_utc": "2026-11-27T16:44:10.003932+00:00",
+  "documentation": {
+    "specification_section": "7.7",
+    "status": "COMPLETED",
+    "premises_in_table": 10,
+    "internal_validity_discussions": 10,
+    "construct_validity_discussions": 10,
+    "external_validity_discussions": 10,
+    "maintained_source": "ManufacturingCell/D3_PREMISSAS.md",
+    "source_sha256": "f944008d072b8b4c2b6970e45d658f0b6bcfed9953749ba82ac21093b74ff412",
+    "automatically_included_in_report": true,
+    "all_source_text_confirmed_in_pdf": true,
+    "html_table_rows_including_headers": [
+      11,
+      42
+    ],
+    "d3_validation_record_updated": true
+  },
+  "technical_campaign_repeated_after_change": true,
+  "historical_d2_preserved": true,
+  "review_baseline_commit": "1543a98f3d98b1cec6696b018ff0f66ccaefa9b8",
+  "publication_authorized_at_utc": "2026-11-27T17:42:16.460159+00:00",
+  "publication_preflight": {
+    "remote_main_matches_review_baseline": true,
+    "target_branch": "d3-runtime",
+    "original_d2_unchanged": true,
+    "reviewed_source_whitespace_check": "passed",
+    "raw_native_outputs": "preserved without whitespace editing",
+    "autocrlf_true_byte_preservation_checks": 20,
+    "git_attributes_versioned": true
+  }
+}

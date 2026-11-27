@@ -9,6 +9,15 @@ The full project specification (background on P, multi-agent systems, norms and 
 
 ## Layout
 
+The D3 runtime-monitoring campaign is documented in
+[`Implementation/evidence/D3/D3_GUIA.md`](Implementation/evidence/D3/D3_GUIA.md).
+It includes two-technician logs, S4 in PObserve, runtime faults, log defects,
+R2 calibration, JUnit tests and an executable CLI verification matrix. Read
+`summary.json` and `D3_RELATORIO.md` in the same directory for executed results.
+The report also includes the ten modeling assumptions, each discussed under
+internal, construct and external validity. Its maintained source is
+[`ManufacturingCell/D3_PREMISSAS.md`](ManufacturingCell/D3_PREMISSAS.md).
+
 ```
 ProjectManufacturingCell2026/
 ├── Common/            shared P model machines and monitors
@@ -35,6 +44,17 @@ python3 ../tools/simulate_logs.py --scenario cell --policy naive --seed 2 --out 
 ```
 
 ## Status
+
+**D3 — 27 November 2026:** the local synthetic-log campaign completed with
+41/41 expected PObserve CLI verdicts, 19 passing JUnit tests and nine Python
+consistency tests. Both P projects compile; a fresh two-technician D2 regression
+found zero bugs in 1,000 schedules (seed 42). R2 was calibrated to an observed
+maximum of eight ticks over 6,680 completed adaptations. This is scoped evidence,
+not a physical-cell validation or an exhaustive proof. See
+[`D3 report`](Implementation/evidence/D3/D3_RELATORIO.md) and
+[`machine-readable summary`](Implementation/evidence/D3/summary.json).
+
+The following entries preserve the earlier baseline validation history.
 
 The team ran the baseline preflight on 3 November 2026 with P 3.1.0.0, .NET SDK 8.0.427, Temurin 17.0.21 and Gradle 8.10.2. `p compile`, `p compile --mode pobserve`, the Gradle build and the two sample-log JUnit tests succeeded. The PObserve CLI replay and the acceptance checker runs remain pending. Treat every other "expected" result in the guide as a hypothesis until it is recorded in the validation record (`ManufacturingCell/INSTRUCTIONS.md`, section 5).
 

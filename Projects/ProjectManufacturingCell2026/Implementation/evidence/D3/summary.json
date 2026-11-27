@@ -1,0 +1,26 @@
+{
+  "status": "D3_LOCALLY_VERIFIED_SYNTHETIC",
+  "maturity": "TECHNICALLY_VERIFIED",
+  "junit": {
+    "tests": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python_tests": 9,
+  "pobserve_checks": 41,
+  "matched": 41,
+  "cases": 16,
+  "calibrated_bound": 8,
+  "completed_adaptations_measured": 6680,
+  "calibration_pending_adaptations_at_eof": 28,
+  "d2_regression_schedules": 1000,
+  "d2_regression_seed": 42,
+  "elapsed_seconds": 131.92,
+  "limitations": [
+    "Os logs s\u00e3o sint\u00e9ticos; nenhuma c\u00e9lula f\u00edsica ou implanta\u00e7\u00e3o real foi avaliada.",
+    "O m\u00e1ximo da calibra\u00e7\u00e3o \u00e9 emp\u00edrico e n\u00e3o limita todas as execu\u00e7\u00f5es futuras.",
+    "Logs finitos n\u00e3o demonstram vivacidade ilimitada; adapta\u00e7\u00f5es abertas ao final s\u00e3o registradas.",
+    "A instala\u00e7\u00e3o no controlador do simulador de dois t\u00e9cnicos \u00e9 s\u00edncrona; n\u00e3o h\u00e1 prova de refinamento em rela\u00e7\u00e3o ao modelo P."
+  ]
+}

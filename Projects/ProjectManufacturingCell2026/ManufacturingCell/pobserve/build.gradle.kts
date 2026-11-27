@@ -45,6 +45,7 @@ sourceSets {
 
 tasks.test {
     useJUnitPlatform()
+    systemProperty("d3.evidence.dir", file("../../Implementation/evidence/D3").absolutePath)
     testLogging {
         events("passed", "skipped", "failed")
     }

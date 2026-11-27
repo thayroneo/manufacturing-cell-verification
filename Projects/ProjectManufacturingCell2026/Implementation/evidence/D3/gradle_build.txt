@@ -1,0 +1,80 @@
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set DIRNAME=C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\ 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>if "C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\" == "" set DIRNAME=. 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set APP_BASE_NAME=gradlew 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set APP_HOME=C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\ 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>for %i in ("C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\") do set APP_HOME=%~fi 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set APP_HOME=C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\ 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m" 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set JAVA_HOME=D:\ManufacturingCell-D3-tools-20261127\jdk\jdk-17.0.21.1+2 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set JAVA_EXE=D:\ManufacturingCell-D3-tools-20261127\jdk\jdk-17.0.21.1+2/bin/java.exe 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>if exist "D:\ManufacturingCell-D3-tools-20261127\jdk\jdk-17.0.21.1+2/bin/java.exe" goto execute 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>set CLASSPATH=C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\\gradle\wrapper\gradle-wrapper.jar 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>"D:\ManufacturingCell-D3-tools-20261127\jdk\jdk-17.0.21.1+2/bin/java.exe" "-Xmx64m" "-Xms64m"   "-Dorg.gradle.appname=gradlew" -classpath "C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain --no-daemon build uberjar 
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Task :compilePSpec
+.. Searching for a P project file *.pproj locally in the current folder
+.. Found P project file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\src\main\CellRegulation.pproj
+----------------------------------------
+==== Loading project file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\src\main\CellRegulation.pproj
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\MonitorEvents.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\Specs.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\RuntimeSpecs.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PSpec\TeamSpecs.p
+----------------------------------------
+Parsing ...
+Type checking ...
+----------------------------------------
+Code generation for PObserve...
+Generated pom.xml
+Generated PTypes.java.
+Generated PEvents.java.
+Generated PMachines.java.
+Generated FFIStubs.txt.
+Build succeeded.
+----------------------------------------
+Compilation succeeded.
+~~ [PTool]: Thanks for using P! ~~
+
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :jar UP-TO-DATE
+> Task :assemble UP-TO-DATE
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources UP-TO-DATE
+> Task :testClasses UP-TO-DATE
+> Task :uberjar UP-TO-DATE
+> Task :test UP-TO-DATE
+> Task :check UP-TO-DATE
+> Task :build UP-TO-DATE
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 30s
+7 actionable tasks: 2 executed, 5 up-to-date
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>if 0 EQU 0 goto mainEnd 
+
+C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve>if "Windows_NT" == "Windows_NT" endlocal

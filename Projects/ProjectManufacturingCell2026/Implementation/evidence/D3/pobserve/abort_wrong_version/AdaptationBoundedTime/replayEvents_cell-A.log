@@ -1,0 +1,9 @@
+errorKey=cell-A
+errorTimeStamp=1792396802002
+errorMessage=Assertion failure: ..\..\..\..\Common\RuntimeSpecs.p:80:7 abort does not match pending adaptation
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:00.002000000Z, event=eAdaptationBoundConfigured[8], logLine='2026-10-19 08:00:00.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=RUNTIME_CONFIG, MaxAdaptTicks=8', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:01.001000000Z, event=eTick[1], logLine='2026-10-19 08:00:01.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:01.002000000Z, event=eAdaptationStarted[1], logLine='2026-10-19 08:00:01.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_START, Ver=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.001000000Z, event=eTick[2], logLine='2026-10-19 08:00:02.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=2', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.002000000Z, event=eAdaptationAborted[2], logLine='2026-10-19 08:00:02.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_ABORT, Ver=2', customPayload=null}

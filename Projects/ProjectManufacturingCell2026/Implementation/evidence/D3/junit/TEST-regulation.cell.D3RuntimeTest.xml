@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="regulation.cell.D3RuntimeTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-11-27T15:02:08" hostname="DESKTOP-F7C3CMU" time="0.138">
+  <properties/>
+  <testcase name="originalBoundRejectsOverFiveTickExecution()" classname="regulation.cell.D3RuntimeTest" time="0.021"/>
+  <testcase name="calibratedBoundAcceptsSameExecution()" classname="regulation.cell.D3RuntimeTest" time="0.019"/>
+  <testcase name="deletedSanctionAlsoFailsR1()" classname="regulation.cell.D3RuntimeTest" time="0.011"/>
+  <testcase name="measuredMaximumIsAcceptedAtEightTicks()" classname="regulation.cell.D3RuntimeTest" time="0.014"/>
+  <testcase name="actualDelayedCommitFailsR2()" classname="regulation.cell.D3RuntimeTest" time="0.008"/>
+  <testcase name="missingLeaveProducesFalseSafetyAlarm()" classname="regulation.cell.D3RuntimeTest" time="0.01"/>
+  <testcase name="reopeningWithSecondTechnicianFailsS4()" classname="regulation.cell.D3RuntimeTest" time="0.006"/>
+  <testcase name="entryWithoutLockoutFailsR3()" classname="regulation.cell.D3RuntimeTest" time="0.003"/>
+  <testcase name="duplicateOutcomeFailsS3()" classname="regulation.cell.D3RuntimeTest" time="0.006"/>
+  <testcase name="matchingAbortTerminatesBoundedResponse()" classname="regulation.cell.D3RuntimeTest" time="0.003"/>
+  <testcase name="unrelatedAbortDoesNotHidePendingAdaptation()" classname="regulation.cell.D3RuntimeTest" time="0.003"/>
+  <testcase name="actualSuppressedSanctionFailsR1()" classname="regulation.cell.D3RuntimeTest" time="0.005"/>
+  <testcase name="twoOverlappingTechniciansStaySafe()" classname="regulation.cell.D3RuntimeTest" time="0.009"/>
+  <testcase name="duplicateCommitProducesFalseVersionAlarm()" classname="regulation.cell.D3RuntimeTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

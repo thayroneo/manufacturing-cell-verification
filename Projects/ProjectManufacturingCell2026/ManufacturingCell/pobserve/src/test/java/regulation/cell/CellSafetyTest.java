@@ -27,7 +27,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
                 PMachines.NoDoubleOutcome.Supplier.class,
                 PMachines.ObligationDeadlineRespected.Supplier.class,
                 PMachines.AdaptationBoundedTime.Supplier.class,
-                PMachines.LockoutBeforeEntry.Supplier.class
+                PMachines.LockoutBeforeEntry.Supplier.class,
+                PMachines.NoOpeningWhileHumanInside.Supplier.class
         }
 )
 public class CellSafetyTest extends PObserveLogFileBaseTest {

@@ -1,0 +1,6 @@
+2026-10-19 08:00:00.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=CONFIG, Capacity=0:1
+2026-10-19 08:00:00.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=RUNTIME_CONFIG, MaxAdaptTicks=8
+2026-10-19 08:00:01.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=1
+2026-10-19 08:00:01.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_START, Ver=1
+2026-10-19 08:00:02.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=2
+2026-10-19 08:00:02.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_ABORT, Ver=1

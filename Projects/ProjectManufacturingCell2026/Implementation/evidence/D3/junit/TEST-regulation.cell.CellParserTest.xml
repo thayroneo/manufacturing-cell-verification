@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="regulation.cell.CellParserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-27T15:02:07" hostname="DESKTOP-F7C3CMU" time="0.093">
+  <properties/>
+  <testcase name="missingRequiredFieldIsNotSilentlySkipped()" classname="regulation.cell.CellParserTest" time="0.079"/>
+  <testcase name="runtimeBoundIsRecognized()" classname="regulation.cell.CellParserTest" time="0.011"/>
+  <testcase name="irrelevantLineProducesNoEvents()" classname="regulation.cell.CellParserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

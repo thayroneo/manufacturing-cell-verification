@@ -1,0 +1,1297 @@
+{
+  "status": "GENERATED_NOT_YET_VERIFIED",
+  "origin": "Synthetic simulation and explicit log mutations",
+  "selected_bound": 8,
+  "two_technicians_seed": 0,
+  "cases": [
+    {
+      "name": "original_twophase",
+      "log": "logs/original_twophase.log",
+      "kind": "BASELINE",
+      "expected": {
+        "RegimentationSafety": "PASS",
+        "NoStaleAdmission": "PASS",
+        "NoDoubleOutcome": "PASS",
+        "ObligationDeadlineRespected": "PASS",
+        "AdaptationBoundedTime": "PASS",
+        "LockoutBeforeEntry": "PASS",
+        "NoOpeningWhileHumanInside": "PASS"
+      },
+      "note": "Original committed fixture; no runtime configuration added.",
+      "sha256": "0d53f828231e9de705c4682be6520440e0eb580defdc01a4c754409c9d8adb12",
+      "events": {
+        "CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 18,
+        "ABANDON": 6,
+        "LEAVE": 17,
+        "FULFILLED": 14,
+        "ADAPT_START": 10,
+        "COMMIT": 10,
+        "HUMAN_ENTER": 5,
+        "SANCTION": 9,
+        "HUMAN_LEAVE": 5
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 5,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 8,
+            "end": 8,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 18,
+            "end": 18,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 20,
+            "end": 20,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 42,
+            "end": 42,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 54,
+            "end": 54,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "original_naive",
+      "log": "logs/original_naive.log",
+      "kind": "KNOWN_SYSTEM_DESIGN_FAULT",
+      "expected": {
+        "RegimentationSafety": "VIOLATION",
+        "NoStaleAdmission": "VIOLATION"
+      },
+      "note": "Original naive fixture, unchanged.",
+      "sha256": "d50d75a323d0ecf0f03afbdff28918261b32ec3c4e4203240ef527404d391754",
+      "events": {
+        "CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 26,
+        "ENTER": 23,
+        "ADAPT_START": 14,
+        "COMMIT": 14,
+        "HUMAN_ENTER": 7,
+        "LEAVE": 22,
+        "FULFILLED": 19,
+        "HUMAN_LEAVE": 7,
+        "SANCTION": 5,
+        "ABANDON": 2
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 3,
+            "end": 3,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 4,
+            "end": 4,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 13,
+            "end": 13,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 16,
+            "end": 16,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 22,
+            "end": 22,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 23,
+            "end": 23,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 30,
+            "end": 30,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 33,
+            "end": 33,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 39,
+            "end": 39,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 40,
+            "end": 40,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 11,
+            "start": 44,
+            "end": 44,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 12,
+            "start": 47,
+            "end": 47,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 13,
+            "start": 57,
+            "end": 57,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 14,
+            "start": 58,
+            "end": 58,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "two_technicians_fixed",
+      "log": "logs/two_technicians_fixed.log",
+      "kind": "SYNTHETIC_FIXED",
+      "expected": {
+        "RegimentationSafety": "PASS",
+        "NoStaleAdmission": "PASS",
+        "NoDoubleOutcome": "PASS",
+        "ObligationDeadlineRespected": "PASS",
+        "AdaptationBoundedTime": "PASS",
+        "LockoutBeforeEntry": "PASS",
+        "NoOpeningWhileHumanInside": "PASS"
+      },
+      "note": "Two overlapping technicians; seed 0; holders include pending entry authorizations.",
+      "sha256": "7ff6f72120b5df4d3114beee490f814cfca682a3b34b7e635fd26561b899b98c",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 21,
+        "ADAPT_START": 3,
+        "COMMIT": 3,
+        "HUMAN_ENTER": 2,
+        "ABANDON": 4,
+        "SANCTION": 9,
+        "HUMAN_LEAVE": 2,
+        "ENTER": 17,
+        "LEAVE": 16,
+        "FULFILLED": 11
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 2,
+            "end": 2,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 2,
+            "end": 2,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 7,
+            "end": 7,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 2,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "two_technicians_prefix",
+      "log": "logs/two_technicians_prefix.log",
+      "kind": "KNOWN_SYSTEM_DESIGN_FAULT",
+      "expected": {
+        "NoOpeningWhileHumanInside": "VIOLATION"
+      },
+      "note": "Same seed, holder check disabled; serialized adaptations alone do not ensure S4.",
+      "sha256": "bb232650db638c955fbd1567fbd97c332f207047f6d21dbf727f77c8208c5769",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 21,
+        "ADAPT_START": 4,
+        "COMMIT": 4,
+        "HUMAN_ENTER": 2,
+        "ABANDON": 4,
+        "SANCTION": 9,
+        "HUMAN_LEAVE": 2,
+        "ENTER": 17,
+        "LEAVE": 16,
+        "FULFILLED": 11
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 2,
+            "end": 2,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 2,
+            "end": 2,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 7,
+            "end": 7,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 7,
+            "end": 7,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 2,
+        "unsafe_reopenings": [
+          {
+            "version": 3,
+            "tick": 7,
+            "people": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "seed64_default_bound",
+      "log": "logs/seed64_default_bound.log",
+      "kind": "BOUND_CALIBRATION",
+      "expected": {
+        "AdaptationBoundedTime": "VIOLATION"
+      },
+      "note": "Original five-tick choice is too small for this synthetic run.",
+      "sha256": "0b7a4c2df0ba8ffb958f3b1bbe79cbbcaf922e02048a3a9083dc1e5e794870bc",
+      "events": {
+        "CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 19,
+        "LEAVE": 19,
+        "FULFILLED": 16,
+        "ADAPT_START": 8,
+        "COMMIT": 8,
+        "HUMAN_ENTER": 4,
+        "HUMAN_LEAVE": 4,
+        "SANCTION": 9,
+        "ABANDON": 6
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 10,
+            "end": 11,
+            "duration": 1,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 12,
+            "end": 12,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 20,
+            "end": 26,
+            "duration": 6,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 35,
+            "end": 35,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 38,
+            "end": 38,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 46,
+            "end": 46,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 50,
+            "end": 50,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "seed64_calibrated",
+      "log": "logs/seed64_calibrated.log",
+      "kind": "BOUND_CALIBRATION",
+      "expected": {
+        "RegimentationSafety": "PASS",
+        "NoStaleAdmission": "PASS",
+        "NoDoubleOutcome": "PASS",
+        "ObligationDeadlineRespected": "PASS",
+        "AdaptationBoundedTime": "PASS",
+        "LockoutBeforeEntry": "PASS",
+        "NoOpeningWhileHumanInside": "PASS"
+      },
+      "note": "Same events with explicit calibrated runtime bound.",
+      "sha256": "38fbb1d2c04efe11af8af8220069c686749ca1bb7eb36829d2d6c3976511d423",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 19,
+        "LEAVE": 19,
+        "FULFILLED": 16,
+        "ADAPT_START": 8,
+        "COMMIT": 8,
+        "HUMAN_ENTER": 4,
+        "HUMAN_LEAVE": 4,
+        "SANCTION": 9,
+        "ABANDON": 6
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 10,
+            "end": 11,
+            "duration": 1,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 12,
+            "end": 12,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 20,
+            "end": 26,
+            "duration": 6,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 35,
+            "end": 35,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 38,
+            "end": 38,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 46,
+            "end": 46,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 50,
+            "end": 50,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "seed299_calibrated",
+      "log": "logs/seed299_calibrated.log",
+      "kind": "BOUND_CALIBRATION",
+      "expected": {
+        "RegimentationSafety": "PASS",
+        "NoStaleAdmission": "PASS",
+        "NoDoubleOutcome": "PASS",
+        "ObligationDeadlineRespected": "PASS",
+        "AdaptationBoundedTime": "PASS",
+        "LockoutBeforeEntry": "PASS",
+        "NoOpeningWhileHumanInside": "PASS"
+      },
+      "note": "Observed maximum of eight ticks, checked at the selected bound.",
+      "sha256": "8fe6b6fd1bd4057ef9ec077d0a2a5ee991ceff66acbf617dd8a93c4d1f2c2814",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 23,
+        "ENTER": 16,
+        "LEAVE": 15,
+        "SANCTION": 10,
+        "FULFILLED": 12,
+        "ADAPT_START": 8,
+        "COMMIT": 8,
+        "HUMAN_ENTER": 4,
+        "ABANDON": 7,
+        "HUMAN_LEAVE": 4
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 8,
+            "end": 9,
+            "duration": 1,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 12,
+            "end": 12,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 19,
+            "end": 27,
+            "duration": 8,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 45,
+            "end": 45,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 50,
+            "end": 50,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "system_sanction_suppressed",
+      "log": "logs/system_sanction_suppressed.log",
+      "kind": "SYSTEM_FAULT",
+      "expected": {
+        "ObligationDeadlineRespected": "VIOLATION"
+      },
+      "note": "Organization never performs sanctions. Logger records all events that actually occurred.",
+      "sha256": "984cc54e0a92e057823f1aa3013c95a65ff838631f5b4c47ab13628f6420589f",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 18,
+        "ABANDON": 6,
+        "LEAVE": 17,
+        "FULFILLED": 15,
+        "ADAPT_START": 10,
+        "COMMIT": 10,
+        "HUMAN_ENTER": 5,
+        "HUMAN_LEAVE": 5
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 5,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 8,
+            "end": 8,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 18,
+            "end": 18,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 20,
+            "end": 20,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 42,
+            "end": 42,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 54,
+            "end": 54,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "system_commit_delayed",
+      "log": "logs/system_commit_delayed.log",
+      "kind": "SYSTEM_FAULT",
+      "expected": {
+        "AdaptationBoundedTime": "VIOLATION"
+      },
+      "note": "Actual commit is postponed; affected guard remains blocked.",
+      "sha256": "7ebca1c251dc00bca311ec737d1cbc56cfdf607451fc6a2e23f684b4a2e013eb",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 8,
+        "ABANDON": 16,
+        "LEAVE": 8,
+        "FULFILLED": 6,
+        "ADAPT_START": 5,
+        "SANCTION": 17,
+        "COMMIT": 5,
+        "HUMAN_ENTER": 3,
+        "HUMAN_LEAVE": 2
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 15,
+            "duration": 10,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 19,
+            "end": 19,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 23,
+            "end": 33,
+            "duration": 10,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 37,
+            "end": 37,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 49,
+            "end": 59,
+            "duration": 10,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "log_missing_leave",
+      "log": "logs/log_missing_leave.log",
+      "kind": "LOG_DEFECT",
+      "expected": {
+        "RegimentationSafety": "VIOLATION"
+      },
+      "note": "Post-processing removed one actual event ('LEAVE', {'Agent': 1, 'Res': 0}); ground truth remains original_twophase.",
+      "sha256": "e6accd7b7e34cc4c2bccc901eadc367c97104b063e66e9758534e851aede1a5b",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 18,
+        "ABANDON": 6,
+        "FULFILLED": 14,
+        "ADAPT_START": 10,
+        "COMMIT": 10,
+        "HUMAN_ENTER": 5,
+        "SANCTION": 9,
+        "HUMAN_LEAVE": 5,
+        "LEAVE": 16
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 5,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 8,
+            "end": 8,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 18,
+            "end": 18,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 20,
+            "end": 20,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 42,
+            "end": 42,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 54,
+            "end": 54,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "log_deleted_sanction",
+      "log": "logs/log_deleted_sanction.log",
+      "kind": "LOG_DEFECT",
+      "expected": {
+        "ObligationDeadlineRespected": "VIOLATION"
+      },
+      "note": "Post-processing removed one actual event ('SANCTION', {'Id': 0, 'Agent': 2}); ground truth remains original_twophase.",
+      "sha256": "90a8e02b3d17df2f480e17247a1e539fa36ba557cf3f467bfc3c2b6d995609ab",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 18,
+        "ABANDON": 6,
+        "LEAVE": 17,
+        "FULFILLED": 14,
+        "ADAPT_START": 10,
+        "COMMIT": 10,
+        "HUMAN_ENTER": 5,
+        "HUMAN_LEAVE": 5,
+        "SANCTION": 8
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 5,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 8,
+            "end": 8,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 18,
+            "end": 18,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 20,
+            "end": 20,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 42,
+            "end": 42,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 54,
+            "end": 54,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "log_duplicate_commit",
+      "log": "logs/log_duplicate_commit.log",
+      "kind": "LOG_DEFECT",
+      "expected": {
+        "NoStaleAdmission": "VIOLATION"
+      },
+      "note": "Duplicated COMMIT; timestamps remain strictly increasing.",
+      "sha256": "7027f9693d63e4ad3cfe8903dc8d35c83dcb3b9f3e0de8ce64c9f4bff8d1e44d",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 18,
+        "ABANDON": 6,
+        "LEAVE": 17,
+        "FULFILLED": 14,
+        "ADAPT_START": 10,
+        "COMMIT": 11,
+        "HUMAN_ENTER": 5,
+        "SANCTION": 9,
+        "HUMAN_LEAVE": 5
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 5,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 8,
+            "end": 8,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 18,
+            "end": 18,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 20,
+            "end": 20,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 42,
+            "end": 42,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 54,
+            "end": 54,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "log_duplicate_outcome",
+      "log": "logs/log_duplicate_outcome.log",
+      "kind": "LOG_DEFECT",
+      "expected": {
+        "NoDoubleOutcome": "VIOLATION"
+      },
+      "note": "Duplicated existing SANCTION; tests S3 on runtime data.",
+      "sha256": "9bdf206ef36f911858e670416282fda5d862f66c127723636f0ebd2ce27d4598",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 60,
+        "OBLIGATION": 25,
+        "ENTER": 18,
+        "ABANDON": 6,
+        "LEAVE": 17,
+        "FULFILLED": 14,
+        "ADAPT_START": 10,
+        "COMMIT": 10,
+        "HUMAN_ENTER": 5,
+        "SANCTION": 10,
+        "HUMAN_LEAVE": 5
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 5,
+            "end": 5,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 2,
+            "start": 8,
+            "end": 8,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 3,
+            "start": 18,
+            "end": 18,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 4,
+            "start": 20,
+            "end": 20,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 5,
+            "start": 29,
+            "end": 29,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 6,
+            "start": 31,
+            "end": 31,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 7,
+            "start": 42,
+            "end": 42,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 8,
+            "start": 43,
+            "end": 43,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 9,
+            "start": 53,
+            "end": 53,
+            "duration": 0,
+            "outcome": "COMMIT"
+          },
+          {
+            "version": 10,
+            "start": 54,
+            "end": 54,
+            "duration": 0,
+            "outcome": "COMMIT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "human_bypasses_lockout",
+      "log": "logs/human_bypasses_lockout.log",
+      "kind": "SYSTEM_FAULT",
+      "expected": {
+        "LockoutBeforeEntry": "VIOLATION"
+      },
+      "note": "Faithfully recorded entry without a committed lock-out.",
+      "sha256": "37b1d8da56bd6a5404ae5e3f650187453f41b186dc08acc6e7d23862b9a3694b",
+      "events": {
+        "CONFIG": 1,
+        "HUMAN_ENTER": 1
+      },
+      "analysis": {
+        "completed": [],
+        "pending_at_eof": {},
+        "max_people": 1,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "abort_valid",
+      "log": "logs/abort_valid.log",
+      "kind": "MONITOR_BOUNDARY",
+      "expected": {
+        "AdaptationBoundedTime": "PASS"
+      },
+      "note": "Abort must correlate with the pending version.",
+      "sha256": "264204eee90465c192479522727f8bfd3b8f7626d0c5d68d99e9647c2c41c108",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 2,
+        "ADAPT_START": 1,
+        "ADAPT_ABORT": 1
+      },
+      "analysis": {
+        "completed": [
+          {
+            "version": 1,
+            "start": 1,
+            "end": 2,
+            "duration": 1,
+            "outcome": "ADAPT_ABORT"
+          }
+        ],
+        "pending_at_eof": {},
+        "max_people": 0,
+        "unsafe_reopenings": []
+      }
+    },
+    {
+      "name": "abort_wrong_version",
+      "log": "logs/abort_wrong_version.log",
+      "kind": "MONITOR_BOUNDARY",
+      "expected": {
+        "AdaptationBoundedTime": "VIOLATION"
+      },
+      "note": "Abort must correlate with the pending version.",
+      "sha256": "585a5a1a63a1a08063865acaaf048bf6f954f627ce7cc779608f7230ad4679e3",
+      "events": {
+        "CONFIG": 1,
+        "RUNTIME_CONFIG": 1,
+        "TICK": 2,
+        "ADAPT_START": 1,
+        "ADAPT_ABORT": 1
+      },
+      "analysis": {
+        "completed": [],
+        "pending_at_eof": {
+          "1": 1
+        },
+        "max_people": 0,
+        "unsafe_reopenings": []
+      }
+    }
+  ]
+}

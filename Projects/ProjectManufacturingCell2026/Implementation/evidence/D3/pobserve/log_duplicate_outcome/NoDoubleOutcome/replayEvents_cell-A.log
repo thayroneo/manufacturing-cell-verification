@@ -1,0 +1,7 @@
+errorKey=cell-A
+errorTimeStamp=1792396806003
+errorMessage=Assertion failure: ..\..\..\..\Common\Specs.p:84:5 obligation 0 resolved twice
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:04.004000000Z, event=eObligationFulfilled[PTuple_id_agent[id=1, agent=1]], logLine='2026-10-19 08:00:04.004000 [cell-A] INFO Regulation - : Site=cell-A, Event=FULFILLED, Id=1, Agent=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:06.002000000Z, event=eSanctionApplied[PTuple_id_agent[id=0, agent=2]], logLine='2026-10-19 08:00:06.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=SANCTION, Id=0, Agent=2', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:06.003000000Z, event=eSanctionApplied[PTuple_id_agent[id=0, agent=2]], logLine='2026-10-19 08:00:06.003000 [cell-A] INFO Regulation - : Site=cell-A, Event=SANCTION, Id=0, Agent=2', customPayload=null}

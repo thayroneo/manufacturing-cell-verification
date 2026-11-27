@@ -1,0 +1,1 @@
+Generated 16 cases; calibrated B=8; 6680 completed adaptations; seed=0

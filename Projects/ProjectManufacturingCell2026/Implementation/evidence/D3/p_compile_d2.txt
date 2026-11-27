@@ -1,0 +1,40 @@
+.. Searching for a P project file *.pproj locally in the current folder
+.. Found P project file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\ManufacturingCellTeam.pproj
+----------------------------------------
+==== Loading project file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\ManufacturingCellTeam.pproj
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\AdaptationCoordinator.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\Clock.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\HumanRequester.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\MonitorEvents.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\ObligationManager.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\ResourceGuard.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\RuntimeSpecs.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\Specs.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Common\Types.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PSrc\CellAgent.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PSpec\TeamMutants.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PSpec\TeamSpecs.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PTst\MutantTests.p
+....... includes p file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PTst\TestScript.p
+----------------------------------------
+Parsing ...
+Type checking ...
+----------------------------------------
+Code generation for PChecker...
+Generated ManufacturingCellTeam.cs.
+Compiling generated code...
+Reusing existing C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PGenerated\PChecker\Test.cs
+  Determinando os projetos a serem restaurados...
+  Todos os projetos estão atualizados para restauração.
+  ManufacturingCellTeam -> C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\PGenerated\PChecker\net8.0\ManufacturingCellTeam.dll
+
+Compilação com êxito.
+    0 Aviso(s)
+    0 Erro(s)
+
+Tempo Decorrido 00:00:01.87
+
+
+----------------------------------------
+Compilation succeeded.
+~~ [PTool]: Thanks for using P! ~~

@@ -1,0 +1,32 @@
+Current PObserve configuration:
+PObserveConfig {
+  outputDir            = C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\system_sanction_suppressed\ObligationDeadlineRespected
+  inputKind            = TEXT
+  supplierJars         = [C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\ManufacturingCell\pobserve\build\libs\CellRegulation-1.0.0-uber.jar]
+  parserName           = null
+  specificationName    = ObligationDeadlineRespected
+  replayWindowSize     = 100
+  logDelimiter         = \n
+}
+-------------------------------------
+PObserve Spec Violation::
+Assertion failure: ..\..\..\..\Common\RuntimeSpecs.p:36:9 obligation 0 is overdue (due 5, now 7) but was neither fulfilled nor sanctioned
+.. writing error log into file C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\system_sanction_suppressed\ObligationDeadlineRespected\replayEvents_cell-A.log
+-------------------------------------
+
+Total time taken = 0.00285 min
+
+---------------------------------------------------------------------------------------------------------
+Total Events Read        Total Verified Events    Total Verified Keys      Total Partition Keys   
+---------------------------------------------------------------------------------------------------------
+100                      10                       0                        1                      
+
+
+------------------------------------------------------------------------------------------------------
+Total Parser Errors      Total Spec Errors        Total Out of Order Errors     Total Unknown Errors   
+------------------------------------------------------------------------------------------------------
+0                        1                        0                             0                      
+
+
+PObserve run completed with 1 error(s)
+Run details and replay event logs can be found in C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\pobserve\system_sanction_suppressed\ObligationDeadlineRespected

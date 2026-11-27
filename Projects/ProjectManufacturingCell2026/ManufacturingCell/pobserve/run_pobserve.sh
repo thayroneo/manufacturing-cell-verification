@@ -17,7 +17,8 @@ shift || true
 SPECS=("$@")
 if [ ${#SPECS[@]} -eq 0 ]; then
   SPECS=(RegimentationSafety NoStaleAdmission NoDoubleOutcome
-         ObligationDeadlineRespected AdaptationBoundedTime LockoutBeforeEntry)
+         ObligationDeadlineRespected AdaptationBoundedTime LockoutBeforeEntry
+         NoOpeningWhileHumanInside)
 fi
 
 : "${POBSERVE_JAR:?Set POBSERVE_JAR to the PObserve CLI jar (see INSTRUCTIONS.md, step 3.2)}"
@@ -35,8 +36,8 @@ fi
 
 for spec in "${SPECS[@]}"; do
   echo "================ $spec ================"
-  # The jar holds a single parser, so -p is not needed. If PObserve asks for
-  # one, add:  -p regulation.cell.parser.CellRegulationParser
+  # This jar holds a single parser, selected automatically. The pinned CLI
+  # rejects fully qualified parser names during command-line validation.
   java -jar "$POBSERVE_JAR" \
     --jars "$PKG_JAR" \
     --spec "$spec" \

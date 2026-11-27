@@ -46,14 +46,19 @@ spec ObligationDeadlineRespected observes eObligationCreated, eObligationFulfill
 //    (bounded version of L2 and L3). A failure points to a resource that could
 //    not be drained. An abort (E8/E9) ends the adaptation, so a correctly
 //    abandoned change is not reported, and a retry starts a new measurement.
-spec AdaptationBoundedTime observes eAdaptationStarted, eNormCommitted, eAdaptationAborted, eTick {
+spec AdaptationBoundedTime observes eAdaptationStarted, eNormCommitted, eAdaptationAborted, eTick,
+                                   eAdaptationBoundConfigured {
   var now: int;
   var startedAt: int;
   var pendingVer: int;
   var maxTicks: int;
 
   start state Idle {
-    entry { maxTicks = 5; }
+    entry { if (maxTicks == 0) { maxTicks = 5; } }
+    on eAdaptationBoundConfigured do (bound: int) {
+      assert bound > 0, "adaptation bound must be positive";
+      maxTicks = bound;
+    }
     on eTick do (t: int) { now = t; }
     on eAdaptationStarted do (v: int) { pendingVer = v; startedAt = now; goto InProgress; }
     ignore eNormCommitted, eAdaptationAborted;
@@ -66,8 +71,16 @@ spec AdaptationBoundedTime observes eAdaptationStarted, eNormCommitted, eAdaptat
         format("adaptation to norm set v{0} started at tick {1} and is still not committed at tick {2}",
                pendingVer, startedAt, now);
     }
-    on eNormCommitted do (n: tNormSet) { goto Idle; }
-    on eAdaptationAborted do (v: int) { goto Idle; }
+    on eNormCommitted do (n: tNormSet) {
+      assert n.ver == pendingVer, "commit does not match pending adaptation";
+      assert now - startedAt <= maxTicks, "adaptation committed after its bound";
+      goto Idle;
+    }
+    on eAdaptationAborted do (v: int) {
+      assert v == pendingVer, "abort does not match pending adaptation";
+      assert now - startedAt <= maxTicks, "adaptation aborted after its bound";
+      goto Idle;
+    }
   }
 }
 

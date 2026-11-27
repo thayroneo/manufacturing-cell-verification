@@ -1,0 +1,7 @@
+errorKey=cell-A
+errorTimeStamp=1792396805004
+errorMessage=Assertion failure: ..\..\..\..\Common\Specs.p:45:7 human entered resource 0 while agents were inside
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:00.001000000Z, event=eMonitorConfig[{0=1}], logLine='2026-10-19 08:00:00.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=CONFIG, Capacity=0:1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.002000000Z, event=eResourceEntered[PTuple_agent_res_ver[agent=1, res=0, ver=0]], logLine='2026-10-19 08:00:02.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ENTER, Agent=1, Res=0, Ver=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:05.004000000Z, event=eHumanEntered[0], logLine='2026-10-19 08:00:05.004000 [cell-A] INFO Regulation - : Site=cell-A, Event=HUMAN_ENTER, Res=0', customPayload=null}

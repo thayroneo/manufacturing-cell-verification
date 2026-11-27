@@ -18,3 +18,13 @@ obj/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# D3 local build/caches; verification evidence is explicitly versioned.
+__pycache__/
+*.pyc
+.gradle/
+.local-tools/
+**/pobserve/build/
+**/pobserve/pobserve-out/
+**/pobserve/src/main/java/regulation/cell/spec/
+**/pobserve/src/main/pom.xml

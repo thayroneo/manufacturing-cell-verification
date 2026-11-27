@@ -1,0 +1,14 @@
+test_all_timestamps_are_strict_and_all_hashes_match (test_d3.CorpusTests.test_all_timestamps_are_strict_and_all_hashes_match) ... ok
+test_calibration_measures_start_to_commit_including_known_exceptions (test_d3.CorpusTests.test_calibration_measures_start_to_commit_including_known_exceptions) ... ok
+test_committed_samples_are_copied_byte_for_byte (test_d3.CorpusTests.test_committed_samples_are_copied_byte_for_byte) ... ok
+test_empty_log_must_not_be_reported_as_a_passing_verification (test_d3.CorpusTests.test_empty_log_must_not_be_reported_as_a_passing_verification) ... ok
+test_original_simulator_outputs_remain_compatible (test_d3.CorpusTests.test_original_simulator_outputs_remain_compatible) ... ok
+test_parser_error_must_not_be_hidden_by_a_simultaneous_assertion (test_d3.CorpusTests.test_parser_error_must_not_be_hidden_by_a_simultaneous_assertion) ... ok
+test_partial_checker_campaign_must_not_be_reported_as_complete (test_d3.CorpusTests.test_partial_checker_campaign_must_not_be_reported_as_complete) ... ok
+test_sanction_fault_changes_system_not_just_log (test_d3.CorpusTests.test_sanction_fault_changes_system_not_just_log) ... ok
+test_two_technicians_overlap_and_fix_prevents_reopening (test_d3.CorpusTests.test_two_technicians_overlap_and_fix_prevents_reopening) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.055s
+
+OK

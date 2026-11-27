@@ -64,6 +64,8 @@ public class CellRegulationParser implements Parser<PEvent<?>> {
                 return new PEvents.eMonitorConfig(parseCapacity(f.get("Capacity")));
             case "TICK":
                 return new PEvents.eTick(num(f, "Now"));
+            case "RUNTIME_CONFIG":
+                return new PEvents.eAdaptationBoundConfigured(num(f, "MaxAdaptTicks"));
             case "OBLIGATION":
                 return new PEvents.eObligationCreated(new PTypes.PTuple_id_agent_task_due(
                         num(f, "Id"), num(f, "Agent"), num(f, "Task"), num(f, "Due")));

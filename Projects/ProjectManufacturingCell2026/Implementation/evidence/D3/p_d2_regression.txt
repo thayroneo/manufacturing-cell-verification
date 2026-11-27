@@ -1,0 +1,50 @@
+.. Searching for a P project file *.pproj locally in the current folder
+.. Found P project file: C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\ManufacturingCellTeam.pproj
+.. Searching for a P compiled file locally in folder ../Implementation/PGenerated/
+.. Found a P compiled file: ../Implementation/PGenerated/PChecker\net8.0\ManufacturingCellTeam.dll
+.. Checking ../Implementation/PGenerated/PChecker\net8.0\ManufacturingCellTeam.dll
+.. Running test cases with prefix 'tcCellTwoTechniciansFixed':
+tcCellTwoTechniciansFixed
+.. Test case :: tcCellTwoTechniciansFixed
+... Checker is using 'random' strategy (seed:42).
+..... Schedule #1
+..... Schedule #2
+..... Schedule #3
+..... Schedule #4
+..... Schedule #5
+..... Schedule #6
+..... Schedule #7
+..... Schedule #8
+..... Schedule #9
+..... Schedule #10
+..... Schedule #20
+..... Schedule #30
+..... Schedule #40
+..... Schedule #50
+..... Schedule #60
+..... Schedule #70
+..... Schedule #80
+..... Schedule #90
+..... Schedule #100
+..... Schedule #200
+..... Schedule #300
+..... Schedule #400
+..... Schedule #500
+..... Schedule #600
+..... Schedule #700
+..... Schedule #800
+..... Schedule #900
+..... Schedule #1000
+... Emitting coverage report:
+..... Writing C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\checker\BugFinding\ManufacturingCellTeam.coverage.txt
+..... Writing C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\checker\BugFinding\ManufacturingCellTeam.sci
+... Checking statistics:
+..... Found 0 bugs.
+... Scheduling statistics:
+..... Explored 1000 schedules
+..... Explored 159 timelines
+..... Number of scheduling points in terminating schedules: 146 (min), 151 (avg), 164 (max).
+..... Writing C:\Users\55839\Desktop\Manufacturing Cell\manufacturing-cell-verification\Projects\ProjectManufacturingCell2026\Implementation\evidence\D3\checker\BugFinding\ManufacturingCellTeam_pchecker_summary.txt
+... Elapsed 15.0831994 sec.
+. Done
+~~ [PTool]: Thanks for using P! ~~

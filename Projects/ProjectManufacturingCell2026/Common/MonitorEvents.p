@@ -25,6 +25,9 @@ type tEnter      = (agent: int, res: int, ver: int);
 type tLeave      = (agent: int, res: int);
 
 event eTick: int;                          // logical time (now)
+// Optional runtime configuration, logged immediately after CONFIG. The
+// default remains five ticks when this event is absent (original sample logs).
+event eAdaptationBoundConfigured: int;
 event eMonitorConfig: map[int, int];       // resource -> capacity
 event eObligationCreated: tObligation;
 event eObligationFulfilled: tOutcome;

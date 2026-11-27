@@ -1,0 +1,5 @@
+errorKey=cell-A
+errorTimeStamp=1792396800002
+errorMessage=Assertion failure: ..\..\..\..\Common\RuntimeSpecs.p:95:7 human entered resource 0 without a committed lock-out
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:00.002000000Z, event=eHumanEntered[0], logLine='2026-10-19 08:00:00.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=HUMAN_ENTER, Res=0', customPayload=null}

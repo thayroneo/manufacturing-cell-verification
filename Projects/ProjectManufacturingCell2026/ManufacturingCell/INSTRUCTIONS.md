@@ -1,5 +1,12 @@
 # Manufacturing cell: instructions
 
+**D3 update — 27 November 2026.** The synthetic-log runtime campaign has now
+been executed with PObserve CLI and JUnit. Use the current
+[`D3 guide`](../Implementation/evidence/D3/D3_GUIA.md),
+[`report`](../Implementation/evidence/D3/D3_RELATORIO.md) and
+[`summary`](../Implementation/evidence/D3/summary.json) for reproduction and
+actual results. The dated preflight notes below are retained as history.
+
 A robot arm and an AGV share one work envelope (resource `0`, capacity 1). A single cell controller regiments access to it, and one organizational engine manages job obligations. A maintenance technician triggers a **lock-out adaptation** before entering the cell.
 
 > **Verification status.** The team ran the baseline preflight and acceptance runs on 2026-11-03 with P 3.1.0.0, .NET SDK 8.0.427, Temurin 17.0.21 and Gradle 8.10.2. p compile, E1, E2 and the additional variants completed; PObserve build and JUnit also succeeded. Results are recorded below and in Projeto/evidence/verification-results.md.
@@ -360,6 +367,30 @@ The simulator is deterministic for a given seed, so these commands reproduce the
 | additional variants | isolated variants in Implementation/variants | P 3.1.0.0; .NET SDK 8.0.427 | 1,000 schedules each | E3 fails as predicted; E5/E6 pass |
 
 Evidence: the external verification records.
+
+**D3 local validation — 2026-11-27:**
+
+These are the team's local D3 results, separate from the historical rows above
+and the independent reference below. Exact commands, working directories,
+versions and outputs are archived in `../Implementation/evidence/D3/`.
+The toolchain is P 3.1.0.0, .NET SDK 8.0.428, Temurin 17.0.21.1+2,
+Gradle wrapper 8.10.2, Python 3.11.9 and PObserve CLI source commit `260da92`.
+
+| Step | Command / evidence | Actual result |
+|---|---|---|
+| Build the runtime package | `pobserve/gradlew.bat --no-daemon build uberjar`; `gradle_build.txt`, `junit/` | PObserve Java generation and build succeeded; 19 JUnit tests, zero failures/errors/skips |
+| Both sample logs | `python tools/d3_verify.py --cli <PObserve-1.0.0.jar>` from the project root; `results.json`, `pobserve/original_*/` | Two-phase accepted by all seven runtime monitors; naive rejected by S1 and S2 |
+| Two technicians and S4 | Same CLI campaign; `pobserve/two_technicians_*/` | Corrected log accepted by all seven monitors; pre-fix reopening rejected by S4 |
+| System faults and log defects | Same CLI campaign; `cases.json`, `logs/`, `pobserve/` | R1/R2 detected actual system faults; four logging mutations produced the predicted apparent violations; originals retained |
+| R2 calibration | `python tools/d3_generate.py`; `calibration.json` | 1,000 duration-measurement runs, 6,680 completed adaptations, maximum 8 ticks; 28 adaptations open at EOF; maximum is empirical |
+| Corpus and runner consistency | `python -m unittest discover -s tools -p test_d3.py -v` | Nine tests passed; examples preserved byte for byte |
+| Compile and regress D2 | `p compile` in each P project; `p check -tc tcCellTwoTechniciansFixed -s 1000 --seed 42 --outdir <D3/checker>` in `Implementation` | Both projects compiled; 1,000 schedules completed with zero bugs; not a rerun of historical 100,000-schedule evidence |
+| Premises and threats to validity | `D3_PREMISSAS.md`, incorporated into `D3_RELATORIO.md/html/pdf` | All ten section 7.7 premises discussed under internal, construct and external validity; physical deployment remains unvalidated |
+
+The 41/41 expected CLI verdicts include 29 PASS results and 12 intentional
+violations. They are not 41 violation-free executions. The 1,000 calibration
+runs measure durations; only the named corpus checks have PObserve verdicts.
+JaCaMo instrumentation was not performed; section 7.4 lists it as a stretch goal.
 
 **Independent evaluation reference:**
 

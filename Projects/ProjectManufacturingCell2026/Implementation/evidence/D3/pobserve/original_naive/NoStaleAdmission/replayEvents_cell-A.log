@@ -1,0 +1,7 @@
+errorKey=cell-A
+errorTimeStamp=1792396803007
+errorMessage=Assertion failure: ..\..\..\..\Common\Specs.p:67:7 agent 2 admitted to resource 0, closed by committed norm set v1 (guard still on v0)
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.002000000Z, event=eResourceEntered[PTuple_agent_res_ver[agent=1, res=0, ver=0]], logLine='2026-10-19 08:00:02.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ENTER, Agent=1, Res=0, Ver=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:03.003000000Z, event=eNormCommitted[PTuple_ver_clsd[ver=1, closed=[0]]], logLine='2026-10-19 08:00:03.003000 [cell-A] INFO Regulation - : Site=cell-A, Event=COMMIT, Ver=1, Closed=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:03.007000000Z, event=eResourceEntered[PTuple_agent_res_ver[agent=2, res=0, ver=0]], logLine='2026-10-19 08:00:03.007000 [cell-A] INFO Regulation - : Site=cell-A, Event=ENTER, Agent=2, Res=0, Ver=0', customPayload=null}

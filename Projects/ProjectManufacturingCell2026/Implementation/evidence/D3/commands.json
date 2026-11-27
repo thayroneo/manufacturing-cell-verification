@@ -1,0 +1,135 @@
+[
+  {
+    "step": "version_p",
+    "command": [
+      "p",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026",
+    "exit_code": 0,
+    "seconds": 1.047
+  },
+  {
+    "step": "version_dotnet",
+    "command": [
+      "dotnet",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026",
+    "exit_code": 0,
+    "seconds": 1.422
+  },
+  {
+    "step": "version_java",
+    "command": [
+      "java",
+      "-version"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026",
+    "exit_code": 0,
+    "seconds": 0.953
+  },
+  {
+    "step": "generate",
+    "command": [
+      "C:\\Users\\55839\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "tools/d3_generate.py"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026",
+    "exit_code": 0,
+    "seconds": 1.828
+  },
+  {
+    "step": "python_tests",
+    "command": [
+      "C:\\Users\\55839\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools",
+      "-p",
+      "test_d3.py",
+      "-v"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026",
+    "exit_code": 0,
+    "seconds": 0.25
+  },
+  {
+    "step": "p_compile_baseline",
+    "command": [
+      "p",
+      "compile"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\ManufacturingCell",
+    "exit_code": 0,
+    "seconds": 14.265
+  },
+  {
+    "step": "p_compile_d2",
+    "command": [
+      "p",
+      "compile"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\Implementation",
+    "exit_code": 0,
+    "seconds": 2.5
+  },
+  {
+    "step": "gradle_version",
+    "command": [
+      "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\ManufacturingCell\\pobserve\\gradlew.bat",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\ManufacturingCell\\pobserve",
+    "exit_code": 0,
+    "seconds": 7.625
+  },
+  {
+    "step": "gradle_build",
+    "command": [
+      "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\ManufacturingCell\\pobserve\\gradlew.bat",
+      "--no-daemon",
+      "build",
+      "uberjar"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\ManufacturingCell\\pobserve",
+    "exit_code": 0,
+    "seconds": 30.594
+  },
+  {
+    "step": "pobserve_campaign",
+    "command": [
+      "C:\\Users\\55839\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "tools/d3_verify.py",
+      "--cli",
+      "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\.tools\\pobserve-source\\Src\\PObserve\\PObserve\\build\\libs\\PObserve-1.0.0.jar",
+      "--java",
+      "java",
+      "--workers",
+      "2"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026",
+    "exit_code": 0,
+    "seconds": 55.203
+  },
+  {
+    "step": "p_d2_regression",
+    "command": [
+      "p",
+      "check",
+      "-tc",
+      "tcCellTwoTechniciansFixed",
+      "-s",
+      "1000",
+      "--seed",
+      "42",
+      "--outdir",
+      "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\Implementation\\evidence\\D3\\checker"
+    ],
+    "cwd": "C:\\Users\\55839\\Desktop\\Manufacturing Cell\\manufacturing-cell-verification\\Projects\\ProjectManufacturingCell2026\\Implementation",
+    "exit_code": 0,
+    "seconds": 16.016
+  }
+]

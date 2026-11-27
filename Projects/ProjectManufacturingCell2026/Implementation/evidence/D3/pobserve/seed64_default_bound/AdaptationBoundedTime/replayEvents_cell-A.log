@@ -1,0 +1,35 @@
+errorKey=cell-A
+errorTimeStamp=1792396826001
+errorMessage=Assertion failure: ..\..\..\..\Common\RuntimeSpecs.p:70:7 adaptation to norm set v3 started at tick 20 and is still not committed at tick 26
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:01.001000000Z, event=eTick[1], logLine='2026-10-19 08:00:01.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.001000000Z, event=eTick[2], logLine='2026-10-19 08:00:02.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=2', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:03.001000000Z, event=eTick[3], logLine='2026-10-19 08:00:03.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=3', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:04.001000000Z, event=eTick[4], logLine='2026-10-19 08:00:04.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=4', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:05.001000000Z, event=eTick[5], logLine='2026-10-19 08:00:05.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=5', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:06.001000000Z, event=eTick[6], logLine='2026-10-19 08:00:06.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=6', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:07.001000000Z, event=eTick[7], logLine='2026-10-19 08:00:07.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=7', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:08.001000000Z, event=eTick[8], logLine='2026-10-19 08:00:08.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=8', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:09.001000000Z, event=eTick[9], logLine='2026-10-19 08:00:09.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=9', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:10.001000000Z, event=eTick[10], logLine='2026-10-19 08:00:10.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=10', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:10.002000000Z, event=eAdaptationStarted[1], logLine='2026-10-19 08:00:10.002000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_START, Ver=1', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:11.001000000Z, event=eTick[11], logLine='2026-10-19 08:00:11.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=11', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:11.004000000Z, event=eNormCommitted[PTuple_ver_clsd[ver=1, closed=[0]]], logLine='2026-10-19 08:00:11.004000 [cell-A] INFO Regulation - : Site=cell-A, Event=COMMIT, Ver=1, Closed=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:12.001000000Z, event=eTick[12], logLine='2026-10-19 08:00:12.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=12', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:12.004000000Z, event=eAdaptationStarted[2], logLine='2026-10-19 08:00:12.004000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_START, Ver=2', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:12.005000000Z, event=eNormCommitted[PTuple_ver_clsd[ver=2, closed=[]]], logLine='2026-10-19 08:00:12.005000 [cell-A] INFO Regulation - : Site=cell-A, Event=COMMIT, Ver=2, Closed=-', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:13.001000000Z, event=eTick[13], logLine='2026-10-19 08:00:13.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=13', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:14.001000000Z, event=eTick[14], logLine='2026-10-19 08:00:14.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=14', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:15.001000000Z, event=eTick[15], logLine='2026-10-19 08:00:15.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=15', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:16.001000000Z, event=eTick[16], logLine='2026-10-19 08:00:16.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=16', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:17.001000000Z, event=eTick[17], logLine='2026-10-19 08:00:17.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=17', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:18.001000000Z, event=eTick[18], logLine='2026-10-19 08:00:18.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=18', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:19.001000000Z, event=eTick[19], logLine='2026-10-19 08:00:19.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=19', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:20.001000000Z, event=eTick[20], logLine='2026-10-19 08:00:20.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=20', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:20.003000000Z, event=eAdaptationStarted[3], logLine='2026-10-19 08:00:20.003000 [cell-A] INFO Regulation - : Site=cell-A, Event=ADAPT_START, Ver=3', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:21.001000000Z, event=eTick[21], logLine='2026-10-19 08:00:21.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=21', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:22.001000000Z, event=eTick[22], logLine='2026-10-19 08:00:22.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=22', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:23.001000000Z, event=eTick[23], logLine='2026-10-19 08:00:23.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=23', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:24.001000000Z, event=eTick[24], logLine='2026-10-19 08:00:24.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=24', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:25.001000000Z, event=eTick[25], logLine='2026-10-19 08:00:25.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=25', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:26.001000000Z, event=eTick[26], logLine='2026-10-19 08:00:26.001000 [cell-A] INFO Regulation - : Site=cell-A, Event=TICK, Now=26', customPayload=null}

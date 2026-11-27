@@ -1,0 +1,10 @@
+errorKey=cell-A
+errorTimeStamp=1792396807005
+errorMessage=Assertion failure: ..\..\..\..\Implementation\PSpec\TeamSpecs.p:19:9 resource 0 reopened while 1 human(s) remain inside
+replayEvents=
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.003000000Z, event=eNormCommitted[PTuple_ver_clsd[ver=1, closed=[0]]], logLine='2026-10-19 08:00:02.003000 [cell-A] INFO Regulation - : Site=cell-A, Event=COMMIT, Ver=1, Closed=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.004000000Z, event=eHumanEntered[0], logLine='2026-10-19 08:00:02.004000 [cell-A] INFO Regulation - : Site=cell-A, Event=HUMAN_ENTER, Res=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.006000000Z, event=eNormCommitted[PTuple_ver_clsd[ver=2, closed=[0]]], logLine='2026-10-19 08:00:02.006000 [cell-A] INFO Regulation - : Site=cell-A, Event=COMMIT, Ver=2, Closed=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:02.007000000Z, event=eHumanEntered[0], logLine='2026-10-19 08:00:02.007000 [cell-A] INFO Regulation - : Site=cell-A, Event=HUMAN_ENTER, Res=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:07.003000000Z, event=eHumanLeft[0], logLine='2026-10-19 08:00:07.003000 [cell-A] INFO Regulation - : Site=cell-A, Event=HUMAN_LEAVE, Res=0', customPayload=null}
+PObserveEvent{partitionKey='cell-A', timestamp=2026-10-19T08:00:07.005000000Z, event=eNormCommitted[PTuple_ver_clsd[ver=3, closed=[]]], logLine='2026-10-19 08:00:07.005000 [cell-A] INFO Regulation - : Site=cell-A, Event=COMMIT, Ver=3, Closed=-', customPayload=null}

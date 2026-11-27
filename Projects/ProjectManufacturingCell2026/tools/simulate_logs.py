@@ -101,12 +101,15 @@ class Guard:
 class Organization:
     """Obligations, sanctions and the adaptation coordinator."""
 
-    def __init__(self, log, guards, policy, rng):
+    def __init__(self, log, guards, policy, rng, suppress_sanctions=False, commit_delay=0):
         self.log, self.guards, self.policy, self.rng = log, guards, policy, rng
         self.next_id = 0
         self.open = {}               # id -> (agent, due)
         self.ver, self.closed = 0, set()
         self.adapting = None         # (target_ver, target_closed, affected_res)
+        self.suppress_sanctions = suppress_sanctions
+        self.commit_delay = commit_delay
+        self.commit_not_before = 0
 
     def assign(self, agent, task, due):
         oid = self.next_id
@@ -123,6 +126,8 @@ class Organization:
     def on_tick(self, now):
         for oid, (agent, due) in sorted(self.open.items()):
             if now > due:
+                if self.suppress_sanctions:
+                    continue  # system fault: no sanction occurs; nothing is hidden by the logger
                 del self.open[oid]
                 self.log.emit("SANCTION", Id=oid, Agent=agent)
 
@@ -135,6 +140,7 @@ class Organization:
             target.discard(res)
         ver = self.ver + 1
         self.log.emit("ADAPT_START", Ver=ver)
+        self.commit_not_before = self.log.now + (self.commit_delay if close else 0)
         if self.policy == "naive":
             # declare first, let each guard install whenever its message arrives
             self._commit(ver, target)
@@ -150,6 +156,8 @@ class Organization:
     def try_finish(self):
         if not self.adapting:
             return True
+        if self.log.now < self.commit_not_before:
+            return False  # system fault: controller postpones the actual commit
         ver, target, res = self.adapting
         g = self.guards[res]
         if res in target and g.occ:
@@ -250,7 +258,7 @@ class Robot:
                 self.job, self.pos = None, -1
 
 
-def simulate(scenario, policy, seed, ticks):
+def simulate(scenario, policy, seed, ticks, suppress_sanctions=False, commit_delay=0):
     rng = random.Random(seed)
     if scenario == "cell":
         log = Log("cell-A")
@@ -262,7 +270,7 @@ def simulate(scenario, policy, seed, ticks):
         guards = {z: Guard(z, 1) for z in (0, 1, 2)}
         actors = [Robot(1, [0, 1, 2], rng, 0.9), Robot(2, [2, 1, 0], rng, 0.9)]
         human = Human(1, rng, 12)
-    org = Organization(log, guards, policy, rng)
+    org = Organization(log, guards, policy, rng, suppress_sanctions, commit_delay)
     log.emit("CONFIG", Capacity=";".join(f"{r}:{g.cap}" for r, g in guards.items()))
 
     for now in range(1, ticks + 1):
@@ -288,7 +296,7 @@ def simulate(scenario, policy, seed, ticks):
 # ---------------------------------------------------------------------
 # Mirror of the P monitors (convenience only; the P specs are the reference)
 # ---------------------------------------------------------------------
-def check(log, scenario):
+def check(log, scenario, include_s4=False):
     errs = {}
 
     def fail(mon, msg):
@@ -298,6 +306,7 @@ def check(log, scenario):
     committed_ver, committed_closed = 0, set()
     resolved, open_due = set(), {}
     now, adapt_start, adapt_ver = 0, None, None
+    adapt_bound = 5
     abandoned = set()           # obligation ids abandoned after repeated denials
     for ev, f in log.events:
         if ev == "CONFIG":
@@ -305,12 +314,14 @@ def check(log, scenario):
                 r, c = pair.split(":")
                 cap[int(r)] = int(c)
                 occ.setdefault(int(r), 0)
+        elif ev == "RUNTIME_CONFIG":
+            adapt_bound = f["MaxAdaptTicks"]
         elif ev == "TICK":
             now = f["Now"]
             for oid, due in open_due.items():
                 if now > due + 1:
                     fail("ObligationDeadlineRespected", f"obligation {oid} overdue at tick {now}")
-            if adapt_start is not None and now - adapt_start > 5:
+            if adapt_start is not None and now - adapt_start > adapt_bound:
                 fail("AdaptationBoundedTime", f"adaptation v{adapt_ver} not committed by tick {now}")
         elif ev == "ENTER":
             r = f["Res"]
@@ -342,6 +353,8 @@ def check(log, scenario):
             committed_ver = f["Ver"]
             c = f["Closed"]
             committed_closed = set() if c == "-" else {int(x) for x in str(c).split(";")}
+            if any(count > 0 and resource not in committed_closed for resource, count in human_in.items()):
+                fail("NoOpeningWhileHumanInside", "resource reopened while a human remains inside")
             adapt_start = None
         elif ev == "OBLIGATION":
             open_due[f["Id"]] = f["Due"]
@@ -360,6 +373,8 @@ def check(log, scenario):
                 "ObligationDeadlineRespected", "AdaptationBoundedTime", "LockoutBeforeEntry"]
     if scenario == "fleet":
         monitors.append("SanctionsReflectMisconduct")
+    if include_s4:
+        monitors.append("NoOpeningWhileHumanInside")
     return {m: errs.get(m) for m in monitors}
 
 
@@ -371,14 +386,25 @@ def main():
     ap.add_argument("--ticks", type=int, default=60)
     ap.add_argument("--out", required=True)
     ap.add_argument("--check", action="store_true", help="print what each monitor should report")
+    ap.add_argument("--technicians", type=int, choices=[1, 2], default=1)
+    ap.add_argument("--lockout-policy", choices=["fixed", "prefix"], default="fixed")
+    ap.add_argument("--suppress-sanctions", action="store_true")
+    ap.add_argument("--commit-delay", type=int, default=0)
     a = ap.parse_args()
 
-    log = simulate(a.scenario, a.policy, a.seed, a.ticks)
+    if a.technicians == 2:
+        if a.scenario != "cell" or a.policy != "twophase":
+            ap.error("two technicians require --scenario cell --policy twophase")
+        from d3_scenarios import simulate_two
+        log = simulate_two(a.seed, a.ticks, a.lockout_policy == "fixed")
+    else:
+        log = simulate(a.scenario, a.policy, a.seed, a.ticks,
+                       a.suppress_sanctions, a.commit_delay)
     with open(a.out, "w") as fh:
         fh.write("\n".join(log.lines) + "\n")
     print(f"wrote {len(log.lines)} lines to {a.out}")
     if a.check:
-        for mon, err in check(log, a.scenario).items():
+        for mon, err in check(log, a.scenario, include_s4=a.technicians == 2).items():
             print(f"  {'FAIL' if err else 'ok  '}  {mon}" + (f": {err}" if err else ""))
 
 
